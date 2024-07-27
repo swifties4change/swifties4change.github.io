@@ -1,0 +1,72 @@
+body {
+    font-family: "Open Sans", sans-serif;
+    color: #FFFFFF;
+    background-color: #36498E;
+    border: 0;
+    margin: 0;
+    padding: 20px;
+    width: 99%;
+  }
+
+  header{
+    font-family: "League Spartan", sans-serif;
+    border: 2px;
+    padding: 2em;
+  }
+
+  .btn-style{
+    background-color: #FFFFFF;
+    color: #36498E;
+    padding: 15px 25px;
+    text-decoration: none;
+    cursor: pointer;
+    border: none;
+    border-radius: 25px;
+    margin: 10px;
+  }
+
+  .link-container{
+    margin:24px;
+  }
+
+  .flex-container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .logo {max-width:100%;}
+
+  .league-spartan {
+    font-family: "League Spartan", sans-serif;
+    font-optical-sizing: auto;
+    /* font-weight: <weight>; */
+    font-style: normal;
+  }
+
+  .logo {max-width:60%;}
+
+  .open-sans {
+    font-family: "Open Sans", sans-serif;
+    font-optical-sizing: auto;
+    /* font-weight: <weight>; */
+    font-style: normal;
+    font-variation-settings:
+      "wdth" 100;
+  }
+
+  .social-media {
+    width:30px;
+    height:30px;
+    background-color: #FFFFFF;
+    padding: 20px;
+    text-decoration: none;
+    cursor: pointer;
+    border: none;
+    border-radius: 25px;
+    margin: 10px;
+  }
+  
+  .whiteTShirtText{
+    color: #FFFFFF;
+  }
