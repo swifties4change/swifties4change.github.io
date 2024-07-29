@@ -1,0 +1,104 @@
+uuid: 79ed14a9-7713-4576-bde0-105285bb0a68
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.layout.field_background_color
+    - field.field.paragraph.layout.field_gutter_size
+    - field.field.paragraph.layout.field_heading_size
+    - field.field.paragraph.layout.field_items
+    - field.field.paragraph.layout.field_layout
+    - field.field.paragraph.layout.field_rich_text
+    - field.field.paragraph.layout.field_title
+    - paragraphs.paragraphs_type.layout
+  module:
+    - field_group
+    - paragraphs
+    - text
+third_party_settings:
+  field_group:
+    group_layout_settings:
+      children:
+        - field_layout
+        - field_gutter_size
+        - field_background_color
+        - field_heading_size
+      label: 'Layout settings'
+      region: content
+      parent_name: ''
+      weight: 0
+      format_type: details
+      format_settings:
+        classes: ''
+        show_empty_fields: false
+        id: ''
+        open: false
+        description: ''
+        required_fields: true
+id: paragraph.layout.default
+targetEntityType: paragraph
+bundle: layout
+mode: default
+content:
+  field_background_color:
+    type: options_select
+    weight: 3
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_gutter_size:
+    type: options_select
+    weight: 2
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_heading_size:
+    type: options_select
+    weight: 4
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_items:
+    type: paragraphs
+    weight: 6
+    region: content
+    settings:
+      title: Paragraph
+      title_plural: Paragraphs
+      edit_mode: closed
+      closed_mode: summary
+      autocollapse: none
+      closed_mode_threshold: 0
+      add_mode: dropdown
+      form_display_mode: default
+      default_paragraph_type: _none
+      features:
+        add_above: '0'
+        collapse_edit_all: collapse_edit_all
+        duplicate: duplicate
+    third_party_settings: {  }
+  field_layout:
+    type: options_select
+    weight: 1
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_rich_text:
+    type: text_textarea
+    weight: 5
+    region: content
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+  field_title:
+    type: string_textfield
+    weight: 4
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+hidden:
+  created: true
+  status: true

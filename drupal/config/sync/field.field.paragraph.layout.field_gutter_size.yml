@@ -1,0 +1,21 @@
+uuid: 11d86e1c-daf2-45d3-a34b-e9c5cc08f946
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_gutter_size
+    - paragraphs.paragraphs_type.layout
+  module:
+    - options
+id: paragraph.layout.field_gutter_size
+field_name: field_gutter_size
+entity_type: paragraph
+bundle: layout
+label: 'Gutter Size'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: list_string

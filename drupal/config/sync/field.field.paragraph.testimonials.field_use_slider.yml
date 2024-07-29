@@ -1,0 +1,23 @@
+uuid: 4f07d5c2-bad9-4684-8204-6beeb81a7dbb
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_use_slider
+    - paragraphs.paragraphs_type.testimonials
+id: paragraph.testimonials.field_use_slider
+field_name: field_use_slider
+entity_type: paragraph
+bundle: testimonials
+label: 'Use slider?'
+description: ''
+required: false
+translatable: true
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

@@ -1,0 +1,19 @@
+uuid: 1e774b78-2f8d-484c-8890-ad876d3e0c19
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_title
+    - paragraphs.paragraphs_type.icon_card
+id: paragraph.icon_card.field_title
+field_name: field_title
+entity_type: paragraph
+bundle: icon_card
+label: Title
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

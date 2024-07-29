@@ -1,0 +1,60 @@
+uuid: dc4907fa-b45e-452f-9da5-6cec776c7fec
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.fact.field_link
+    - field.field.paragraph.fact.field_number
+    - field.field.paragraph.fact.field_prefix
+    - field.field.paragraph.fact.field_suffix
+    - field.field.paragraph.fact.field_title
+    - paragraphs.paragraphs_type.fact
+  module:
+    - link
+id: paragraph.fact.default
+targetEntityType: paragraph
+bundle: fact
+mode: default
+content:
+  field_link:
+    type: link_default
+    weight: 4
+    region: content
+    settings:
+      placeholder_url: ''
+      placeholder_title: ''
+    third_party_settings: {  }
+  field_number:
+    type: number
+    weight: 1
+    region: content
+    settings:
+      placeholder: ''
+    third_party_settings: {  }
+  field_prefix:
+    type: string_textfield
+    weight: 0
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_suffix:
+    type: string_textfield
+    weight: 2
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_title:
+    type: string_textfield
+    weight: 3
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+hidden:
+  created: true
+  status: true

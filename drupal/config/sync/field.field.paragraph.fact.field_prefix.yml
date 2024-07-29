@@ -1,0 +1,19 @@
+uuid: 64dc5c51-13a3-4a98-8f5a-920fe2e6399f
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_prefix
+    - paragraphs.paragraphs_type.fact
+id: paragraph.fact.field_prefix
+field_name: field_prefix
+entity_type: paragraph
+bundle: fact
+label: Prefix
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

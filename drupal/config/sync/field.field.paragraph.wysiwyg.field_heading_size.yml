@@ -1,0 +1,21 @@
+uuid: 7352f8be-19e9-484f-bef8-ee51a7fd61d2
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_heading_size
+    - paragraphs.paragraphs_type.wysiwyg
+  module:
+    - options
+id: paragraph.wysiwyg.field_heading_size
+field_name: field_heading_size
+entity_type: paragraph
+bundle: wysiwyg
+label: 'Heading Size'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: list_string

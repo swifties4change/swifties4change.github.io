@@ -1,0 +1,66 @@
+uuid: 805c6407-6061-4aa4-8c6b-75f3cf479122
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_items
+    - paragraphs.paragraphs_type.fact
+    - paragraphs.paragraphs_type.facts
+    - paragraphs.paragraphs_type.from_library
+  module:
+    - entity_reference_revisions
+id: paragraph.facts.field_items
+field_name: field_items
+entity_type: paragraph
+bundle: facts
+label: Items
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    target_bundles:
+      fact: fact
+      from_library: from_library
+    negate: 0
+    target_bundles_drag_drop:
+      accordion:
+        weight: 13
+        enabled: false
+      accordions:
+        weight: 14
+        enabled: false
+      fact:
+        weight: 15
+        enabled: true
+      facts:
+        weight: 16
+        enabled: false
+      from_library:
+        weight: 17
+        enabled: true
+      image_card:
+        weight: 18
+        enabled: false
+      layout:
+        weight: 19
+        enabled: false
+      media_embed:
+        weight: 20
+        enabled: false
+      testimonial:
+        weight: 21
+        enabled: false
+      testimonials:
+        weight: 22
+        enabled: false
+      text_card:
+        weight: 23
+        enabled: false
+      wysiwyg:
+        weight: 24
+        enabled: false
+field_type: entity_reference_revisions

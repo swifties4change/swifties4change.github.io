@@ -1,0 +1,30 @@
+uuid: e22eb8e4-6c5f-47f5-b7ca-293c1f65251d
+langcode: en
+status: true
+dependencies:
+  module:
+    - options
+    - paragraphs
+id: paragraph.field_gutter_size
+field_name: field_gutter_size
+entity_type: paragraph
+type: list_string
+settings:
+  allowed_values:
+    -
+      value: no-gutter
+      label: 'No Gutter'
+    -
+      value: normal
+      label: Normal
+    -
+      value: lg-gutter
+      label: 'Large Gutter'
+  allowed_values_function: ''
+module: options
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

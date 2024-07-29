@@ -1,0 +1,11 @@
+uuid: c0726107-c0fb-481b-b396-516a244556eb
+langcode: en
+status: true
+dependencies:
+  module:
+    - paragraphs
+id: paragraph.layout
+label: Layout
+description: ''
+targetEntityType: paragraph
+cache: true

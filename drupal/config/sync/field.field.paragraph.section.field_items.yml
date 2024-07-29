@@ -1,0 +1,128 @@
+uuid: 6a397b47-e1e8-4121-94d2-2996885a479f
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_items
+    - paragraphs.paragraphs_type.accordions
+    - paragraphs.paragraphs_type.facts
+    - paragraphs.paragraphs_type.featured_logos
+    - paragraphs.paragraphs_type.featured_media
+    - paragraphs.paragraphs_type.form
+    - paragraphs.paragraphs_type.from_library
+    - paragraphs.paragraphs_type.layout
+    - paragraphs.paragraphs_type.media_embed
+    - paragraphs.paragraphs_type.section
+    - paragraphs.paragraphs_type.testimonials
+    - paragraphs.paragraphs_type.wysiwyg
+  module:
+    - entity_reference_revisions
+id: paragraph.section.field_items
+field_name: field_items
+entity_type: paragraph
+bundle: section
+label: Items
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    target_bundles:
+      accordions: accordions
+      facts: facts
+      featured_media: featured_media
+      from_library: from_library
+      layout: layout
+      featured_clients: featured_clients
+      media_embed: media_embed
+      featured_case_study: featured_case_study
+      featured_logos: featured_logos
+      featured_services: featured_services
+      form: form
+      testimonials: testimonials
+      wysiwyg: wysiwyg
+      timeline: timeline
+    negate: 0
+    target_bundles_drag_drop:
+      accordion:
+        weight: 19
+        enabled: false
+      accordions:
+        weight: 20
+        enabled: true
+      case_study:
+        weight: 27
+        enabled: false
+      fact:
+        weight: 23
+        enabled: false
+      facts:
+        weight: 24
+        enabled: true
+      featured_case_study:
+        weight: 32
+        enabled: true
+      featured_clients:
+        weight: 30
+        enabled: true
+      featured_logos:
+        weight: 32
+        enabled: true
+      featured_media:
+        weight: 25
+        enabled: true
+      featured_services:
+        weight: 32
+        enabled: true
+      form:
+        weight: 33
+        enabled: true
+      from_library:
+        weight: 26
+        enabled: true
+      full_width_cta:
+        weight: 35
+        enabled: false
+      hero:
+        weight: 27
+        enabled: false
+      icon_card:
+        weight: 31
+        enabled: false
+      image_card:
+        weight: 28
+        enabled: false
+      layout:
+        weight: 29
+        enabled: true
+      link_list:
+        weight: 30
+        enabled: false
+      media_embed:
+        weight: 31
+        enabled: true
+      section:
+        weight: 32
+        enabled: false
+      testimonial:
+        weight: 33
+        enabled: false
+      testimonials:
+        weight: 34
+        enabled: true
+      text_card:
+        weight: 35
+        enabled: false
+      timeline:
+        weight: 40
+        enabled: true
+      timeline_section:
+        weight: 41
+        enabled: false
+      wysiwyg:
+        weight: 36
+        enabled: true
+field_type: entity_reference_revisions

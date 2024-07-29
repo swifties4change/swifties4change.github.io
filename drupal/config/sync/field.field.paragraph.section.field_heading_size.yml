@@ -1,0 +1,21 @@
+uuid: d52449da-100e-4104-a0af-c0572c2dfa1e
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_heading_size
+    - paragraphs.paragraphs_type.section
+  module:
+    - options
+id: paragraph.section.field_heading_size
+field_name: field_heading_size
+entity_type: paragraph
+bundle: section
+label: 'Heading Size'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: list_string

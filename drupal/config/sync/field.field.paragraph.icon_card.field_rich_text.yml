@@ -1,0 +1,22 @@
+uuid: c3f16de7-e37c-44fd-91b5-34a1e015bbe1
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_rich_text
+    - paragraphs.paragraphs_type.icon_card
+  module:
+    - text
+id: paragraph.icon_card.field_rich_text
+field_name: field_rich_text
+entity_type: paragraph
+bundle: icon_card
+label: 'Rich Text'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  allowed_formats: {  }
+field_type: text_long

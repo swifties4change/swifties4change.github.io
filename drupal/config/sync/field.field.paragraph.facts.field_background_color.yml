@@ -1,0 +1,21 @@
+uuid: 4a37c70e-107c-4a75-82c5-4a926f281494
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_background_color
+    - paragraphs.paragraphs_type.facts
+  module:
+    - options
+id: paragraph.facts.field_background_color
+field_name: field_background_color
+entity_type: paragraph
+bundle: facts
+label: 'Background Color'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: list_string

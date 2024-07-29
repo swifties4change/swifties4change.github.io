@@ -1,0 +1,22 @@
+uuid: 17be7984-7a7c-4014-955f-2011a06f3b1e
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_rich_text
+    - paragraphs.paragraphs_type.accordion
+  module:
+    - text
+id: paragraph.accordion.field_rich_text
+field_name: field_rich_text
+entity_type: paragraph
+bundle: accordion
+label: 'Rich Text'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  allowed_formats: {  }
+field_type: text_long

@@ -1,0 +1,22 @@
+uuid: 3f3a1d4b-d4b0-4179-afe9-0aefb883e61a
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_rich_text
+    - paragraphs.paragraphs_type.testimonials
+  module:
+    - text
+id: paragraph.testimonials.field_rich_text
+field_name: field_rich_text
+entity_type: paragraph
+bundle: testimonials
+label: 'Rich Text'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  allowed_formats: {  }
+field_type: text_long

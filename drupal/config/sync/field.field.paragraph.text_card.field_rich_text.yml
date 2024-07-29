@@ -1,0 +1,22 @@
+uuid: 44719cf0-a60b-4fa0-93ff-e9a3c264531c
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_rich_text
+    - paragraphs.paragraphs_type.text_card
+  module:
+    - text
+id: paragraph.text_card.field_rich_text
+field_name: field_rich_text
+entity_type: paragraph
+bundle: text_card
+label: 'Rich Text'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  allowed_formats: {  }
+field_type: text_long

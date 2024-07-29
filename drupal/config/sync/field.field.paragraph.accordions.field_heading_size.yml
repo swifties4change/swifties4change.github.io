@@ -1,0 +1,21 @@
+uuid: f725560c-3d8f-42c6-a647-011a657300ad
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_heading_size
+    - paragraphs.paragraphs_type.accordions
+  module:
+    - options
+id: paragraph.accordions.field_heading_size
+field_name: field_heading_size
+entity_type: paragraph
+bundle: accordions
+label: 'Heading Size'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: list_string

@@ -1,0 +1,23 @@
+uuid: 59ff02ee-0b71-4843-b35b-7c0f67554d2a
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_autoplay
+    - paragraphs.paragraphs_type.featured_logos
+id: paragraph.featured_logos.field_autoplay
+field_name: field_autoplay
+entity_type: paragraph
+bundle: featured_logos
+label: 'Autoplay?'
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

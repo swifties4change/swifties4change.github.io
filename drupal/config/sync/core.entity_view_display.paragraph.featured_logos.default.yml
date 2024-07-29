@@ -1,0 +1,49 @@
+uuid: 4f4747a2-f70b-4733-8d66-871cf8383088
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.featured_logos.field_autoplay
+    - field.field.paragraph.featured_logos.field_media
+    - field.field.paragraph.featured_logos.field_use_slider
+    - paragraphs.paragraphs_type.featured_logos
+  module:
+    - media
+id: paragraph.featured_logos.default
+targetEntityType: paragraph
+bundle: featured_logos
+mode: default
+content:
+  field_autoplay:
+    type: boolean
+    label: hidden
+    settings:
+      format: default
+      format_custom_false: ''
+      format_custom_true: ''
+    third_party_settings: {  }
+    weight: 2
+    region: content
+  field_media:
+    type: media_thumbnail
+    label: hidden
+    settings:
+      image_link: ''
+      image_style: ''
+      image_loading:
+        attribute: lazy
+    third_party_settings: {  }
+    weight: 1
+    region: content
+  field_use_slider:
+    type: boolean
+    label: hidden
+    settings:
+      format: default
+      format_custom_false: ''
+      format_custom_true: ''
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden:
+  search_api_excerpt: true

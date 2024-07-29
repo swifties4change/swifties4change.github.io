@@ -1,0 +1,23 @@
+uuid: c3f9ce61-d5a0-42e1-949f-89201ccfb315
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_center
+    - paragraphs.paragraphs_type.facts
+id: paragraph.facts.field_center
+field_name: field_center
+entity_type: paragraph
+bundle: facts
+label: 'Center?'
+description: 'Check this box if the facts should be centered on the page instead of left-aligned.'
+required: false
+translatable: false
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean
