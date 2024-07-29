@@ -14,6 +14,10 @@ body {
     padding: 2em;
   }
 
+  .no-margin{
+    margin: 0px;
+  }
+
   .btn-style{
     background-color: #FFFFFF;
     color: #36498E;
@@ -27,6 +31,10 @@ body {
 
   .link-container{
     margin:24px;
+  }
+
+  .intro-container{
+    margin:48px;
   }
 
   .flex-container{
