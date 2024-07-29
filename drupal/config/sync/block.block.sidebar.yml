@@ -1,0 +1,30 @@
+uuid: 6308ea08-a6a2-4d29-827d-c0d0a0339bf1
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+    - node_block
+  theme:
+    - base
+id: sidebar
+theme: base
+region: sidebar_bottom
+weight: 0
+provider: null
+plugin: node_block
+settings:
+  id: node_block
+  label: Sidebar
+  label_display: '0'
+  provider: node_block
+  theme_suggestion: sidebar
+visibility:
+  'entity_bundle:node':
+    id: 'entity_bundle:node'
+    negate: false
+    context_mapping:
+      node: '@node.node_route_context:node'
+    bundles:
+      article: article
+      page: page
