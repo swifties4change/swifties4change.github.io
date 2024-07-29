@@ -1,0 +1,44 @@
+{{ attach_library('base/team-member') }}
+{% set catch_cache = content|render %}
+{% block content %}
+	<article class="team-member">
+		{% if content.field_image_media.0 %}
+			<div class="img">
+				{{content.field_image_media}}
+			</div>
+		{% endif %}
+		<div class="text">
+			<div class="name">
+				{{ label }}
+			</div>
+			{% if content.field_positions.0 %}
+				<div class="positions">
+					{{ content.field_positions }}
+				</div>
+			{% endif %}
+			{% if content.field_email.0 %}
+				<div class="email info">
+					<strong>Email</strong>
+					{{ content.field_email }}
+				</div>
+			{% endif %}
+			{% if content.field_phone.0 %}
+				<div class="phone info">
+					<strong>Phone</strong>
+					{{ content.field_phone }}
+				</div>
+			{% endif %}
+			{% if content.field_address.0 %}
+				<div class="address info">
+					<strong>Address</strong>
+					{{ content.field_address }}
+				</div>
+			{% endif %}
+			{% if content.body|render is not empty %}
+					<div class="actions">
+						<a href="{{url}}" class="action-link black">View Bio</a>
+					</div>
+			{% endif %}
+		</div>
+	</article>
+{% endblock content %}

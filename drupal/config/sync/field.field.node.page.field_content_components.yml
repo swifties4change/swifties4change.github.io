@@ -1,0 +1,96 @@
+uuid: 627a9919-bfe1-4c54-ab61-8482fd1032f0
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_content_components
+    - node.type.page
+    - paragraphs.paragraphs_type.accordions
+    - paragraphs.paragraphs_type.featured_media
+    - paragraphs.paragraphs_type.from_library
+    - paragraphs.paragraphs_type.layout
+    - paragraphs.paragraphs_type.link_list
+    - paragraphs.paragraphs_type.media_embed
+    - paragraphs.paragraphs_type.testimonials
+    - paragraphs.paragraphs_type.wysiwyg
+  module:
+    - entity_reference_revisions
+id: node.page.field_content_components
+field_name: field_content_components
+entity_type: node
+bundle: page
+label: 'Content Components'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    target_bundles:
+      wysiwyg: wysiwyg
+      accordions: accordions
+      featured_media: featured_media
+      layout: layout
+      link_list: link_list
+      media_embed: media_embed
+      testimonials: testimonials
+      from_library: from_library
+    negate: 0
+    target_bundles_drag_drop:
+      accordion:
+        weight: -29
+        enabled: false
+      accordions:
+        weight: -36
+        enabled: true
+      fact:
+        weight: -28
+        enabled: false
+      facts:
+        weight: -27
+        enabled: false
+      featured_logos:
+        weight: -26
+        enabled: false
+      featured_media:
+        weight: -35
+        enabled: true
+      form:
+        weight: -25
+        enabled: false
+      from_library:
+        weight: -30
+        enabled: true
+      icon_card:
+        weight: -24
+        enabled: false
+      image_card:
+        weight: -23
+        enabled: false
+      layout:
+        weight: -34
+        enabled: true
+      link_list:
+        weight: -33
+        enabled: true
+      media_embed:
+        weight: -32
+        enabled: true
+      section:
+        weight: -22
+        enabled: false
+      testimonial:
+        weight: -21
+        enabled: false
+      testimonials:
+        weight: -31
+        enabled: true
+      text_card:
+        weight: -20
+        enabled: false
+      wysiwyg:
+        weight: -37
+        enabled: true
+field_type: entity_reference_revisions

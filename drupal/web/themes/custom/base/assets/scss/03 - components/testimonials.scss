@@ -1,0 +1,275 @@
+@import '../utilities.scss';
+
+.base__testimonials {
+  margin: $space-lg 0;
+  overflow: hidden;
+
+  @include breakpoint(sm-max) {
+    margin: $space-md 0;
+  }
+
+  .slider {
+    border-top: 2px solid $gray-xl;
+    border-bottom: 2px solid $gray-xl;
+    margin: $space-lg 0 0 0;
+    padding: $space-lg 0;
+    position: relative;
+
+    &::before {
+      background: #fff;
+      color: $secondary;
+      content: "\201C";
+      display: block;
+      font-family: icomoon;
+      font-size: 85px;
+      line-height: .5em;
+      padding: 0 $space-md 0 0;
+      position: absolute;
+      top: $space-xs;
+      z-index: 1;
+      @include translate(0, -50%);
+    }
+
+    .slick-dots {
+      bottom: auto;
+      right: 0;
+      margin: 0;
+      padding: 0;
+      position: absolute;
+      top: 0;
+      width: auto;
+      @include translate(0, -50%);
+
+      li {
+        display: inline-block;
+        font-size: 0;
+        line-height: 1.5em;
+
+        @include breakpoint(xs) {
+          margin-right: $space-xs;
+        }
+
+        &.slick-active,
+        &:hover,
+        &:focus {
+          button {
+            background: $secondary-lt;
+          }
+        }
+
+        button {
+          background: $gray-lt;
+          border: none;
+          border-radius: 100%;
+          height: 15px;
+          padding: 0;
+          width: 15px;
+
+          &::before {
+            display: none;
+          }
+        }
+      }
+    }
+
+    .testimonial {
+      box-shadow: none;
+      display: grid;
+
+      .img {
+        justify-self: end;
+        max-width: 200px;
+
+        @include breakpoint(sm-max) {
+          justify-self: center;
+        }
+      }
+    }
+  }
+}
+
+.testimonials-list {
+  .testimonial {
+    display: flex;
+    margin: $space-xl auto;
+    text-align: center;
+    width: 80%;
+
+    @include breakpoint(sm-max) {
+      display: block;
+    }
+
+    + .testimonial {
+      border-top: 2px solid $gray-lt;
+      margin-top: $space-lg;
+      padding-top: $space-lg;
+    }
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+
+    .img {
+      justify-self: end;
+      max-width: 200px;
+
+      @include breakpoint(sm-max) {
+        margin: 0 auto $space-md;
+      }
+    }
+  }
+}
+
+.testimonial {
+  display: grid;
+  gap: $space-md;
+  grid: auto / 2fr 1fr;
+  grid-auto-flow: dense;
+  outline: none;
+  position: relative;
+
+  @include breakpoint(sm-max) {
+    grid: auto / 1fr;
+    align-content: start;
+  }
+
+  .img {
+    grid-column: 2;
+    position: relative;
+    text-align: center;
+    z-index: 1;
+
+
+    @include breakpoint(sm-max) {
+      grid-column: auto;
+      justify-self: center;
+      max-width: 200px;
+    }
+
+    img {
+      border-radius: 100%;
+    }
+  }
+
+  .text {
+    position: relative;
+    z-index: 1;
+
+    @include breakpoint(sm-max) {
+      text-align: center;
+    }
+
+    .blurb {
+      color: $gray-dk;
+      margin-bottom: $space-md;
+      position: relative;
+
+      @include breakpoint(sm-max) {
+        text-align: center;
+      }
+
+      p {
+
+        font-size: $font-md;
+        line-height: 1.2em;
+        position: relative;
+
+        @include breakpoint(xs) {
+          font-size: $font-sm;
+        }
+      }
+    }
+
+    .name {
+      color: $secondary;
+      display: block;
+      font-family: $font-display;
+      font-size: $font-md;
+      line-height: 1.2em;
+      margin-bottom: $space-sm;
+      font-weight: 700;
+
+      @include breakpoint(sm-max) {
+        font-size: $font-sm;
+      }
+    }
+
+    .title {
+      font-family: $font-display;
+      font-size: $font-xs;
+      font-weight: 700;
+      letter-spacing: 1px;
+      line-height: 1em;
+      text-transform: uppercase;
+    }
+  }
+}
+
+.grid {
+
+  &.two,
+  &.three,
+  &.four {
+    .testimonial {
+      grid: auto / 1fr;
+      align-content: start;
+
+      .img {
+        grid-column: auto;
+        justify-self: center;
+        max-width: 200px;
+      }
+    }
+  }
+
+  .testimonial {
+    background: $gray-xl;
+    border-radius: $border-radius;
+    height: 100%;
+    padding: $space-lg;
+  }
+}
+
+.sidebar {
+  .testimonial {
+    align-content: start;
+    background: $gray-xl;
+    grid: auto / 1fr;
+    padding: $space-md;
+    text-align: center;
+
+    .img {
+      grid-column: auto;
+      justify-self: center;
+      max-width: 200px;
+    }
+
+    .text .blurb p {
+      font-size: $font-xs;
+    }
+  }
+}
+
+.secondary {
+  .testimonials-list {
+    .testimonial {
+      .text {
+        .name {
+          color: $primary;
+        }
+      }
+    }
+  }
+}
+
+.gray {
+  .testimonials-list {
+    .testimonial {
+      .text {
+        .blurb {
+          color: $gray-dk;
+        }
+      }
+    }
+  }
+}

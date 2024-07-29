@@ -1,0 +1,58 @@
+{#
+/**
+* @file
+* Default theme implementation to display a block.
+*
+* Available variables:
+* - plugin_id: The ID of the block implementation.
+* - label: The configured label of the block if visible.
+* - configuration: A list of the block's configuration values.
+* - label: The configured label for the block.
+* - label_display: The display settings for the label.
+* - provider: The module or other provider that provided this block plugin.
+* - Block plugin specific settings will also be stored here.
+* - content: The content of this block.
+* - attributes: array of HTML attributes populated by modules, intended to
+* be added to the main container tag of this template.
+* - id: A valid HTML ID and guaranteed unique.
+* - title_attributes: Same as attributes, except applied to the main title
+* tag that appears in the template.
+* - title_prefix: Additional output populated by modules, intended to be
+* displayed in front of the main title tag that appears in the template.
+* - title_suffix: Additional output populated by modules, intended to be
+* displayed after the main title tag that appears in the template.
+*
+* @see template_preprocess_block()
+*
+* @ingroup themeable
+*/
+#}
+
+{% set catch_cache = content|render %}
+<div{{attributes.addClass('global-footer')}}>
+  {{ title_prefix }}
+  {{ title_suffix }}
+  {% block content %}
+  <div class="contact">
+    {% if content.field_address.0 %}
+      <h4>Contact Us</h4>
+      {{ content.field_address }}
+      {{ content.field_phone }}
+      {% if content.field_contact_link.0 %}
+      <a href="{{content.field_contact_link[0]['#url']}}"
+        class="btn white outline">{{content.field_contact_link[0]['#title']}}</a>
+      {% endif %}
+    {% endif %}
+  </div>
+  <div class="links">
+    {{ content.field_menus }}
+  </div>
+  <div class="social">
+    <h4>Follow Us</h4>
+    <p>{{content.field_follow_us.0}}</p>
+    <div class="social-links">
+      {{ content.field_social_links }}
+    </div>
+  </div>
+  {% endblock %}
+  </div>

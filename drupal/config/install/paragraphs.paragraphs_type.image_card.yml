@@ -1,0 +1,15 @@
+uuid: 2b5e2b4d-087b-4085-a88a-42a321a31705
+langcode: en
+status: true
+dependencies:
+  module:
+    - paragraphs_library
+third_party_settings:
+  paragraphs_library:
+    allow_library_conversion: true
+id: image_card
+label: 'Image Card'
+icon_uuid: null
+icon_default: null
+description: ''
+behavior_plugins: {  }

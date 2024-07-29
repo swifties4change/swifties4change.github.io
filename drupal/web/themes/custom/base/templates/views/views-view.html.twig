@@ -1,0 +1,53 @@
+{#
+/**
+ * @file
+ * Default theme implementation to display a view of unformatted rows.
+ *
+ * Available variables:
+ * - title: The title of this group of rows. May be empty.
+ * - rows: A list of the view's row items.
+ *   - attributes: The row's HTML attributes.
+ *   - content: The row's content.
+ * - view: The view object.
+ * - default_row_class: A flag indicating whether default classes should be
+ *   used on rows.
+ *
+ * @see template_preprocess_views_view_unformatted()
+ *
+ * @ingroup themeable
+ */
+#}
+{% set classes = ['view', 'view-' ~ (id|clean_class), 'view-id-' ~ id, 'view-display-id-' ~ display_id, dom_id ? 'js-view-dom-id-' ~ dom_id] %}
+
+<div {{ attributes.addClass(classes) }}>
+  {{ title_prefix }}
+  {{ title }}
+  {{ title_suffix }}
+
+  {% if exposed %}
+    <div class="view-filters">{{ exposed }}</div>
+  {% endif %}
+  {% if header %}
+    <header>{{ header }}</header>
+  {% endif %}
+
+  {{ attachment_before }}
+
+  {% if rows %}
+    <div class="view-content">{{ rows }}</div>
+  {% elseif empty %}
+    <div class="view-empty">{{ empty }}</div>
+  {% endif %}
+  
+  {{ pager }}
+
+  {{ attachment_after }}
+
+  {{ more }}
+
+  {% if footer %}
+    <footer>{{ footer }}</footer>
+  {% endif %}
+
+  {{ feed_icons }}
+</div>

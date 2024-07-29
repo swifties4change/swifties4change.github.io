@@ -1,0 +1,123 @@
+@import '../utilities.scss';
+
+.site-wrap {
+  .timeline {
+    position: relative;
+    margin: 30px 0;
+
+    .wrapper {
+      position: relative;
+
+      .items {
+        margin-right: 50px;
+
+        @include breakpoint(xs) {
+          margin-right: 0;
+        }
+
+        position: relative;
+
+        .timeline-section {
+          outline: none;
+          width: 300px;
+
+          @include breakpoint(xs) {
+            width: 90vw;
+            margin: 0;
+          }
+
+          .date {
+            color: $secondary-dk;
+            border-bottom: 2px solid $secondary;
+            font-size: 21px;
+            line-height: 24px;
+            margin-bottom: 30px;
+            padding: 0 15px 30px;
+            position: relative;
+
+            &::after {
+              background: $secondary-dk;
+              border-radius: 100%;
+              content: "";
+              height: 20px;
+              left: 15px;
+              position: absolute;
+              top: 100%;
+              width: 20px;
+              @include translate(0, -50%);
+            }
+
+            strong {
+              display: block;
+              margin-bottom: 5px;
+            }
+          }
+
+          .blurb {
+            padding: 0 15px;
+
+            .title {
+              font-size: 18px;
+              line-height: 24px;
+              margin-bottom: 10px;
+            }
+
+            .caption {
+              font-size: 16px;
+              line-height: 21px;
+            }
+          }
+        }
+      }
+
+      .arrows {
+        left: 0;
+        position: absolute;
+        top: 62px;
+        width: 100%;
+        z-index: 2;
+
+        .slick-arrow {
+          background: #fff;
+          border: 2px solid $secondary;
+          border-radius: 100%;
+          color: $primary-dk;
+          cursor: pointer;
+          font-size: 16px;
+          height: 30px;
+          line-height: 26px;
+          outline: none;
+          padding: 0;
+          position: absolute;
+          text-align: center;
+          top: 0;
+          width: 30px;
+          @include translate(0, -50%);
+          @include transition(background .3s linear);
+
+          @include breakpoint(sm-max) {
+            font-size: 18px;
+            height: 36px;
+            line-height: 34px;
+            top: auto;
+            width: 36px;
+          }
+
+          &:hover,
+          &:focus {
+            background: $secondary;
+            color: #fff;
+          }
+
+          &.prev-slide {
+            display: none !important;
+          }
+
+          &.next-slide {
+            right: 0;
+          }
+        }
+      }
+    }
+  }
+}

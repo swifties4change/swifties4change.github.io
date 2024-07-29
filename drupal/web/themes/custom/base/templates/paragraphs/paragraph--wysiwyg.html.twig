@@ -1,0 +1,15 @@
+{% extends 'paragraph.html.twig' %}
+{% set catch_cache = content|render %}
+{% block content %}
+{% if paragraph.field_heading_size.value %}
+    {% set heading = paragraph.field_heading_size.value %}
+{% else%}
+    {% set heading = "h2" %}
+{% endif %}
+    <div class="rich-text">
+        {% if content.field_title.0 %}
+            <{{heading}} class="heading">{{content.field_title.0}}</{{heading}}>
+        {% endif %}
+        {{content.field_rich_text}}
+    </div>
+{% endblock %}

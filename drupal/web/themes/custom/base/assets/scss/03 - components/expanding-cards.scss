@@ -1,0 +1,252 @@
+@import '../utilities.scss';
+
+.base__expanding-cards {
+    background: $primary;
+    color: #fff;
+    margin-bottom: 150px;
+    padding: $space-xl $space-md 0;
+    position: relative;
+    text-align: center;
+
+    @include breakpoint(sm-max) {
+        margin-bottom: 200px;
+        padding: $space-lg 0;
+    }
+
+    &::after {
+        mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' preserveAspectRatio='none'%3E%3Cpolygon points='1600,0 0,0 0,50' /%3E%3C/svg%3E") left no-repeat;
+        content: "";
+        height: 100px;
+        left: 0;
+        mask-size: cover;
+        position: absolute;
+        top: 100%;
+        width: 100%;
+        z-index: 0;
+    }
+
+    &.primary {
+        background: $primary;
+
+        &::after {
+            background: $primary;
+        }
+    }
+
+    &.secondary {
+        background: $secondary;
+
+        &::after {
+            background: $secondary;
+        }
+    }
+
+    &.tertiary {
+        background: $tertiary;
+
+        &::after {
+            background: $tertiary;
+        }
+    }
+
+    &.gray {
+        background: $gray-dk;
+
+        &::after {
+            background: $gray-dk;
+        }
+    }
+
+    &.black {
+        background: #000;
+
+        &::after {
+            background: #000;
+        }
+    }
+
+    &.white {
+        background: #fff;
+        color: $gray-dk;
+
+        &::after {
+            background: #fff;
+        }
+    }
+
+    .container {
+        width: 100%;
+    }
+
+    .blurb {
+        margin: 0 auto;
+        width: 75%;
+
+        @include breakpoint(sm-max) {
+            width: 100%;
+        }
+
+        .lead {
+            color: #fff;
+        }
+
+        a {
+            color: #fff;
+            text-decoration: underline;
+            -webkit-text-decoration-line:  underline;
+            -webkit-text-decoration-color:  $tertiary;
+
+            &:hover,
+            &:focus {
+                text-decoration: none;
+            }
+        }
+    }
+
+    .arrows {
+        display: none;
+        position: relative;
+        width: 100%;
+        z-index: 9;
+
+        @include breakpoint(sm-max) {
+            display: block;
+        }
+
+        .arrow {
+            background: $primary-dk;
+            border: none;
+            border-radius: 100%;
+            color: #fff;
+            font-size: $font-sm;
+            line-height: 1.5em;
+            height: 1.5em;
+            position: absolute;
+            top: $space-xl;
+            width: 1.5em;
+
+            &.next-slide {
+                right: $space-lg;
+
+                @include breakpoint(sm) {
+                    right: $space-xl;
+                }
+            }
+
+            &.prev-slide {
+                left: $space-lg;
+
+                @include breakpoint(sm) {
+                    left: $space-xl;
+                }
+            }
+        }
+    }
+
+    .grid {
+        margin: $space-xl (-($space-sm)) (-($space-xl * 3));
+        position: relative;
+        z-index: 1;
+
+        @include breakpoint(sm-max) {
+            margin: 0 0 -200px 0;
+        }
+
+        .expanding-card {
+            position: relative;
+            margin-bottom: $space-xl;
+
+            @include breakpoint(sm) {
+                padding: $space-lg;
+                margin-bottom: 0;
+            }
+
+            @include breakpoint(xs) {
+                padding: $space-md;
+                margin-bottom: 0;
+            }
+
+            .inner {
+                background: #fff;
+                box-shadow: 0 0 15px 0 rgba(0, 0, 0, 0.2);
+                color: $gray-dk;
+                min-height: 250px;
+                padding: $space-lg;
+                position: relative;
+                text-align: center;
+
+                @include breakpoint(md) {
+                    min-height: 300px;
+                }
+
+                @include breakpoint(sm-max) {
+                    min-height: 0;
+                }
+
+                .icon {
+                    margin-bottom: $space-md;
+
+                    .media {
+                        display: inline-block;
+                        max-height: 70px;
+
+                        svg {
+                            height: 70px;
+                        }
+                    }
+                }
+
+                .expand-content {
+                    height: 0;
+                    overflow: hidden;
+                    @include transition(height .3s $cubic);
+
+                    @include breakpoint(sm-max) {
+                        height: auto;
+                    }
+                }
+            }
+
+            .expand-toggle {
+                background: #fff;
+                border: 2px solid $primary;
+                border-radius: 100%;
+                color: $gray-dk;
+                cursor: pointer;
+                font-size: $font-md;
+                height: 1.5em;
+                left: 50%;
+                line-height: 1.5em;
+                position: absolute;
+                top: 100%;
+                width: 1.5em;
+                @include translate(-50%, -50%);
+                @include transition(border .3s linear);
+
+                @include breakpoint(sm-max) {
+                    display: none;
+                }
+
+                &:hover,
+                &:focus {
+                    border-color: $primary-lt;
+                }
+
+                &.open {
+                    border-color: $primary-lt;
+
+                    &::before {
+                        line-height: 32px;
+                        @include rotate(180);
+                    }
+                }
+
+                &::before {
+                    content: "\e90d";
+                    display: block;
+                    font-family: icomoon;
+                }
+            }
+        }
+    }
+}

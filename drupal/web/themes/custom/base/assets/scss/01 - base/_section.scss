@@ -1,0 +1,106 @@
+@import '../utilities.scss';
+
+.section {
+  color: #000;
+
+  &.has-bg {
+    padding: calc(1.5 * $space-xl) $space-md calc(1.5 * $space-xl);
+
+    @include breakpoint(xs) {
+      padding: $space-lg 0;
+    }
+  }
+
+  &.primary {
+    background: $primary;
+    color: #fff;
+  }
+
+  &.primary-lt {
+    background: $primary-lt;
+  }
+
+  &.primary-dk {
+    background: $primary-xdk;
+    color: #fff;
+  }
+
+  &.secondary {
+    background: $secondary;
+  }
+
+  &.tertiary {
+    background: $tertiary;
+  }
+
+  &.black {
+    background: #000;
+    color: #fff;
+  }
+
+  &.gray {
+    background: $gray-xl;
+  }
+
+  &.white {
+    background: #fff;
+    padding: $space-xl $space-md;
+
+    @include breakpoint(xs) {
+      padding: $space-lg 0;
+    }
+  }
+
+  &.bordered {
+    background: #fff;
+    padding: $space-xl $space-md;
+
+    > .container {
+      &::before {
+        border-top: 5px solid $primary-lt;
+        content: "";
+        margin: 0 auto;
+        padding-bottom: $space-md;
+        position: relative;
+        width: 60%;
+      }
+
+      &::after {
+        border-bottom: 5px solid $primary-lt;
+        content: "";
+        margin: 0 auto;
+        padding-top: $space-md;
+        position: relative;
+        width: 60%;
+      }
+    }
+  }
+
+  .body-text {
+    margin: 0 auto $space-lg;
+    text-align: center;
+
+    @include breakpoint(lg) {
+      width: 65%;
+    }
+
+    &:last-child {
+      margin: 0 auto;
+    }
+  }
+
+  .heading {
+    margin: 0 0 $space-lg 0;
+    text-align: center;
+  }
+
+  .paragraph {
+    + .paragraph--type--wysiwyg {
+      margin-top: $space-xl;
+    }
+  }
+}
+
+.bottom-sections {
+  margin-top: 50px;
+}

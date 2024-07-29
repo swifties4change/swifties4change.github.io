@@ -1,0 +1,63 @@
+{% if page.drawer %}
+	<section class="drawer" role="complementary" aria-label="Site Search">{{ page.drawer }}</section>
+{% endif %}
+<header class="header">
+	<div class="container">
+		<div class="inner">
+			<div class="branding">{{ page.header }}</div>
+			<div class="navigation">
+				<div class="nav-wrapper">
+					<div class="nav">
+						<div class="menu">{{ page.navigation }}
+							<div class="search-toggle" aria-label="press enter to open the search" tabindex="0">
+								<i class="icon-search"></i>
+							</div>
+						</div>
+						<div class="utility">{{ page.utility }}</div>
+					</div>
+					<div class="toggles">
+						<div class="search-toggle" aria-label="press enter to open the search" tabindex="0">
+							<i class="icon-search"></i>
+						</div>
+						<div class="nav-toggle" aria-label="press enter to open the menu" tabindex="0">
+							<span></span>
+							<span></span>
+							<span></span>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="site-search" aria-label="Primary">
+			<div class="search-toggle" aria-label="press enter to close the search" tabindex="0">
+				<i class="icon-close"></i>
+			</div>
+			<h2>What can we help you find?</h2>
+			<form method="get" action="/search/results" autocomplete="off">
+				<div class="form-item inline">
+					<input autocomplete="off" type="text" name="keywords" placeholder="What are you looking for?" aria-label="Please enter your search keywords"/>
+					<button class="btn-search" type="submit" aria-label="click to submit search">
+						<i class="icon-search"></i>
+					</button>
+				</div>
+			</form>
+			<div class="grid three normal">
+				<div>
+					<h3>By Topic</h3>
+          {{ topics }}
+				</div>
+				<div>
+					<h3>Quick Links</h3>
+          {{ quick_links }}
+				</div>
+				<div>
+					<a href="/contact-us" class="btn primary outline">Contact Us</a>
+					<a href="/careers" class="btn secondary outline">Careers</a>
+					<a href="/login" class="btn tertiary outline">Member Login</a>
+
+				</div>
+			</div>
+
+		</div>
+	</div>
+</header>

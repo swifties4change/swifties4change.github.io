@@ -1,0 +1,21 @@
+{{ attach_library('base/image-cards') }}
+{% set catch_cache = content|render %}
+{% block content %}
+	<div class="base__image-card">
+		<div class="img">
+			{% if content.field_link.0 %}
+				<a href="{{paragraph.field_link.0.url}}">{{ content.field_image }}</a>
+			{% else %}
+				{{ content.field_image }}
+			{% endif %}
+		</div>
+		{% if content.field_link.0 %}
+			<h3>
+				<a href="{{paragraph.field_link.0.url}}">{{content.field_title}}</a>
+			</h3>
+		{% else %}
+			<h3>{{content.field_title}}</h3>
+		{% endif %}
+		{{ content.field_rich_text }}
+	</div>
+{% endblock content %}

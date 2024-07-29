@@ -1,0 +1,20 @@
+{{ attach_library('base/expanding-cards') }}
+{% set catch_cache = content|render %}
+{% block content %}
+	<div class="expanding-card">
+		<div class="inner">
+			<div class="blurb">
+				<div class="icon">
+					{{content.field_icon}}
+				</div>
+				<p class="title">
+					<strong>{{ content.field_title.0 }}</strong>
+				</p>
+			</div>
+			<div class="expand-content">
+				<p>{{ content.field_plain_text.0 }}</p>
+			</div>
+			<div class="expand-toggle" tab-index="0" aria-label="click to expand"></div>
+		</div>
+	</div>
+{% endblock %}

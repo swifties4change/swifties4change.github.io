@@ -1,0 +1,15 @@
+{{ attach_library('base/media-embed') }}
+{% set catch_cache = content|render %}
+<div class="base__media-embed">
+  {% if content.field_media['#items']|length == 1 %}
+    {{content.field_media}}
+  {% else %}
+    <div class="slider">
+        {{content.field_media}}
+    </div>
+    <div class="arrows">
+        <div class="prev-slide arrow"><i class="icon-arrow-left"></i></div>
+        <div class="next-slide arrow"><i class="icon-arrow-right"></i></div>
+    </div>
+  {% endif %}
+</div>

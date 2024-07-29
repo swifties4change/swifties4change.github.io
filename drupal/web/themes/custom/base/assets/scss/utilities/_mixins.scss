@@ -1,0 +1,356 @@
+@import 'variables.scss';
+
+//BUTTONS & LINKS
+@mixin button($background, $bghover, $text, $outline: false, $large: false) {
+  background: $background;
+  border-radius: $border-radius-lg;
+  border: 2px solid $background;
+  box-shadow: none;
+  color: $text;
+  cursor: pointer;
+  display: inline-block;
+  font-family: $font-script;
+  font-size: $font-xxs;
+  font-weight: 500;
+  line-height: 1.5em;
+  margin-bottom: $space-md;
+  outline: none !important;
+  padding: $space-xs $space-lg;
+  position: relative;
+  -ms-touch-action: manipulation;
+  touch-action: manipulation;
+  text-align: center;
+  text-decoration: none !important;  user-select: none;
+  vertical-align: middle;
+  white-space: normal;
+  z-index: 1;
+  @include transition(background .3s linear, border .3s linear, color .3s linear);
+
+  &:hover,
+  &:focus {
+    background: $bghover;
+    border: 2px solid $bghover;
+    color: #fff;
+  }
+  // &:last-child {
+  //   margin-bottom: 0;
+  // }
+
+  @if $outline {
+    background: none;
+    border: 2px solid $background;
+    color: $background;
+
+    &:hover,
+    &:focus {
+      background: $background;
+      border: 2px solid $background;
+      color: $text;
+    }
+  }
+
+  @if $large {
+    font-size: $font-sm;
+    line-height: 1em;
+    padding: $space-md $space-lg;
+  }
+}
+
+@mixin action-link($background, $text) {
+  background: none;
+  border-radius: 0;
+  color: $background;
+  font-family: $font-script;
+  font-size: $font-xxs;
+  font-weight: 600;
+  letter-spacing: 1px;
+  line-height: 1emm;
+  padding: 0 0 0 $space-sm;
+  text-decoration: none!important;
+  text-transform: uppercase;
+  transition: padding 0.3s cubic-bezier(0, 0, 0.2, 1), color 0.3s linear, border 0.3s linear;
+  @if $background == $primary {
+    border-left: 4px solid $primary-lt;
+  } @else if $background == $secondary {
+    border-left: 4px solid $secondary-lt;
+  } @else if $background == $tertiary {
+    border-left: 4px solid $tertiary-lt;
+  } @else if $background == #000 {
+    border-left: 4px solid #000;
+  } @else if $background == #fff {
+    border-left: 4px solid #fff;
+  }
+
+  &:hover,
+  &:focus {
+    color: $background!important;
+    padding-left: 20px;
+    @if $background == $primary {
+      border-left: 4px solid $primary-dk;
+    } @else if $background == $secondary {
+      border-left: 4px solid $secondary-dk;
+    } @else if $background == $tertiary {
+      border-left: 4px solid $tertiary-dk;
+    } @else if $background == #000 {
+      border-left: 4px solid $gray-dk;
+    }
+  }
+}
+
+@mixin arrow-link($background) {
+  color: $background;
+  font-family: $font-script;
+  font-size: $font-xxs;
+  font-weight: 600;
+  letter-spacing: 1px;
+  padding-right: $space-lg;
+  position: relative;
+  text-decoration: none;
+  text-transform: uppercase;
+  transition: margin .2s linear;
+
+  &::after {
+    content: "\e921";
+    font-family: icomoon;
+    line-height: 1;
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transition: right .3s linear;
+    transform: translate(0%, -50%);
+    @if $background == $primary-lt {
+      color: $primary-dk;
+    } @else if $background == $secondary {
+      color: $secondary-dk;
+    } @else if $background == $tertiary {
+      color: $tertiary-dk;
+    } @else if $background == #000 {
+      color: $gray-dk;
+    }
+  }
+
+  &:hover,
+  &:focus {
+
+    &::after {
+      right: calc(-1* $space-sm);
+    }
+  }
+}
+
+@mixin underline($color) {
+  position: relative;
+  text-decoration: none;
+
+  &::before {
+    background: $color;
+    content: "";
+    position: absolute;
+    top: 100%;
+    width: 0;
+    height: 2px;
+    left: 0;
+    z-index: 2;
+    @include transition(width .3s $cubic);
+  }
+
+  &::after {
+    content: "";
+    position: absolute;
+    top: 100%;
+    width: 100%;
+    height: 2px;
+    left: 0;
+  }
+
+  &:hover,
+  &:focus,
+  &.is-active {
+    &::before {
+      width: 100%;
+    }
+  }
+}
+
+
+//BREAKPOINTS
+@mixin breakpoint($point) {
+
+  @if ($point ==xl) {
+    @media (min-width: 1400px) {
+      @content;
+    }
+  }
+
+  @if ($point ==lg) {
+    @media (min-width: 1200px) {
+      @content;
+    }
+  }
+
+  @else if ($point ==md) {
+    @media (min-width: 992px) and (max-width: 1199px) {
+      @content;
+    }
+  }
+
+  @else if ($point ==md-min) {
+    @media (min-width: 992px) {
+      @content;
+    }
+  }
+
+  @else if ($point ==sm-max) {
+    @media (max-width: 991px) {
+      @content;
+    }
+  }
+
+  @else if ($point ==sm) {
+    @media (min-width: 768px) and (max-width: 991px) {
+      @content;
+    }
+  }
+
+  @else if ($point ==xs) {
+    @media (max-width: 767px) {
+      @content;
+    }
+  }
+
+  @else if ($point ==xxs) {
+    @media (max-width: 640px) and (min-width: 481px) {
+      @content;
+    }
+  }
+
+  @else if ($point ==xxxs) {
+    @media (max-width: 480px) {
+      @content;
+    }
+  }
+}
+
+//IMAGES
+@mixin img-gradient {
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.8) 100%);
+  content: "";
+  height: 100%;
+  left: 0;
+  pointer-events: none;
+  position: absolute;
+  top: 0;
+  width: 100%;
+}
+
+@mixin grayscale($value) {
+  -webkit-filter: #{"grayscale(#{$value})"};
+ -moz-filter: #{"grayscale(#{$value})"};
+ filter: #{"grayscale(#{$value})"};
+
+}
+
+//FORMS
+@mixin placeholder {
+  &::-webkit-input-placeholder {
+    @content;
+  }
+
+  &:-moz-placeholder {
+    @content;
+  }
+
+  &::-moz-placeholder {
+    @content;
+  }
+
+  &:-ms-input-placeholder {
+    @content;
+  }
+}
+
+
+//ANIMATIONS
+@mixin transition($params...) {
+  -webkit-transition: $params;
+  -moz-transition: $params;
+  -ms-transition: $params;
+  -o-transition: $params;
+  transition: $params;
+}
+
+// generic transform
+@mixin transform($transforms) {
+  -moz-transform: $transforms;
+  -o-transform: $transforms;
+  -ms-transform: $transforms;
+  -webkit-transform: $transforms;
+  transform: $transforms;
+}
+
+// rotate
+@mixin rotate($deg) {
+  @include transform(rotate(#{$deg}deg));
+}
+
+// scale
+@mixin scale($scale) {
+  @include transform(scale($scale));
+}
+
+@mixin scaleX($scaleX) {
+  @include transform(scaleX($scaleX));
+}
+
+@mixin scaleY($scaleY) {
+  @include transform(scaleY($scaleY));
+}
+
+// translate
+@mixin translate($x, $y) {
+  @include transform(translate($x, $y));
+}
+
+// skew
+@mixin skew($x, $y) {
+  @include transform(skew(#{$x}deg, #{$y}deg));
+}
+
+//transform origin
+@mixin transform-origin($origin) {
+  moz-transform-origin: $origin;
+  -o-transform-origin: $origin;
+  -ms-transform-origin: $origin;
+  -webkit-transform-origin: $origin;
+  transform-origin: $origin;
+}
+
+@mixin keyframes($animation-name) {
+  @-webkit-keyframes #{$animation-name} {
+    @content;
+  }
+
+  @-moz-keyframes #{$animation-name} {
+    @content;
+  }
+
+  @-ms-keyframes #{$animation-name} {
+    @content;
+  }
+
+  @-o-keyframes #{$animation-name} {
+    @content;
+  }
+
+  @keyframes #{$animation-name} {
+    @content;
+  }
+}
+
+@mixin animation($str) {
+  -webkit-animation: #{$str};
+  -moz-animation: #{$str};
+  -ms-animation: #{$str};
+  -o-animation: #{$str};
+  animation: #{$str};
+}

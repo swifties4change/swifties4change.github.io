@@ -1,0 +1,17 @@
+{% set catch_cache = content|render %}
+{{ attach_library('base/timeline') }}
+<div class="timeline-section" tabindex="0">
+	<div class="date">
+		<strong>{{content.field_month}}</strong>
+		{{content.field_year}}</div>
+	<div class="blurb">
+		{% if content.field_title.0 %}
+			<p class="title">
+				<strong>{{content.field_title.0}}</strong>
+			</p>
+		{% endif %}
+		{% if content.field_plain_text.0 %}
+		<p class="caption">{{content.field_plain_text.0}}</p>
+		{% endif %}
+	</div>
+</div>

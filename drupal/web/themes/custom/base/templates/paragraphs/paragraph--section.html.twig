@@ -1,0 +1,24 @@
+{% extends 'paragraph.html.twig' %}
+{% block content %}
+{% if paragraph.field_background_color.value %}
+  {% set bg = "has-bg " ~ paragraph.field_background_color.value %}
+{% endif %}
+{% if paragraph.field_heading_size.value %}
+    {% set heading = paragraph.field_heading_size.value %}
+{% else%}    
+    {% set heading = "h2" %}
+{% endif %}
+  <section class="section {{bg}}">
+    <div class="container">    
+        {% if content.field_title.0 or content.field_rich_text.0 %} 
+          <div class="body-text">
+            {% if content.field_title.0 %} 
+                <{{heading}} class="heading">{{content.field_title.0}}</{{heading}}>
+            {% endif %}
+            {{ content.field_rich_text }}
+          </div>
+        {% endif %}
+        {{content.field_items}}
+      </div>
+  </section>
+{% endblock %}

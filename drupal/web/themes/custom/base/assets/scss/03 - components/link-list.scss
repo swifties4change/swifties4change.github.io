@@ -1,0 +1,45 @@
+@import '../utilities.scss';
+
+.base__link-list {
+    ul {
+        li {
+            padding-left: $space-md;
+            position: relative;
+            @include transition(padding .3s $cubic);
+
+            &::before {
+                color: $tertiary;
+                content: "\e90e";
+                font-family: icomoon;
+                left: 0;
+                margin-right: $space-xs;
+                position: absolute;
+            }
+
+            &:hover,
+            &:focus {
+                padding-left: $space-lg;
+            }
+        }
+    }
+}
+
+.sidebar {
+    .base__link-list {
+        h3 {
+            border-bottom: 2px solid $primary-lt;
+            margin-bottom: 20px;
+            padding-bottom: 5px;
+        }
+
+        ul {
+            li {
+                border-bottom: 2px solid $gray-lt;
+                font-size: 16px;
+                line-height: 24px;
+                padding-bottom: 15px;
+                margin-bottom: 15px;
+            }
+        }
+    }
+}

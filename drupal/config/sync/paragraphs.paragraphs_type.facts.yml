@@ -1,0 +1,10 @@
+uuid: e311685a-e2ad-48b0-ad59-ae3c8b1ea1e2
+langcode: en
+status: true
+dependencies: {  }
+id: facts
+label: Facts
+icon_uuid: null
+icon_default: null
+description: ''
+behavior_plugins: {  }

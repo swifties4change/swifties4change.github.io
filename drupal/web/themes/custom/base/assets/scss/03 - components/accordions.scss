@@ -1,0 +1,80 @@
+@import '../utilities.scss';
+
+.base__accordions {
+    margin: $space-lg 0;
+
+    @include breakpoint(sm-max) {
+        margin: $space-md 0;
+    }
+
+    .accordion-item {
+        border: 1px solid $primary;
+        margin-bottom: $space-md;
+
+        h4 {
+            background: $primary;
+            color: #fff;
+            cursor: pointer;
+            display: block;
+            font-size: $font-sm;
+            font-weight: 600;
+            line-height: $font-lg;
+            margin: 0;
+            padding: $space-md calc(4 * $space-md) $space-md $space-md;
+            position: relative;
+            text-transform: none;
+
+            &::after {
+                border-radius: 100%;
+                color: $secondary-lt;
+                content: "\e90d";
+                font-family: icomoon;
+                font-size: 25px;
+                height: 1.5em;
+                line-height: 1.5em;
+                position: absolute;
+                right: $space-md;
+                text-align: center;
+                top: 50%;
+                transform-origin: 50% 25%;
+                width: 1.5em;
+                @include translate(0, -50%);
+            }
+
+            &.open {
+                background: $primary-dk;
+                color: #fff;
+
+                &::after {
+                    color: #fff;
+                    content: "\e90c";
+                    line-height: 1.3em;
+                }
+
+                + div {
+                    padding: $space-md;
+                }
+            }
+
+            + div {
+                font-size: $font-md;
+                line-height: 1.5em;
+                margin: 0;
+                max-height: 0;
+                overflow: hidden;
+                padding: 0 $space-md;
+                @include transition (max-height .3s $cubic, padding .4s $cubic);
+
+                @media print {
+                    max-height: none !important
+                }
+            }
+
+            p {
+                &:last-child {
+                    margin-bottom: 0;
+                }
+            }
+        }
+    }
+}

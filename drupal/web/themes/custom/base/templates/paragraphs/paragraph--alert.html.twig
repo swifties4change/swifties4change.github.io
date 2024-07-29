@@ -1,0 +1,16 @@
+{{ attach_library('base/alert') }}
+{% set catch_cache = content|render %}
+{% set expiry = content.field_expiry_length.0 %}
+{% if content.field_severity_level.0 %}
+    {% set level = content.field_severity_level.0 %}
+{% endif %}
+<div class="alert {{level}}" data-expiry="{{expiry}}" data-alert="{{ paragraph.id() }}">
+    <div class="container">
+        <div class="alert-close" aria-label="Click here to close the alert"><i class="icon-close"></i></div>
+        <div class="inner">
+            <span class="title">{{ content.field_title }}</span>
+            {{ content.field_rich_text }}
+            <span class="more-link">{{ content.field_link }}</span>
+        </div>
+    </div>
+</div>

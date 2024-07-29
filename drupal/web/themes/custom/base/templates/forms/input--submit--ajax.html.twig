@@ -1,0 +1,11 @@
+{#
+/**
+ * @file
+ * Theme override for an 'input' #type form element.
+ *
+ * For input type submits the <button> element causes Ajax stop working
+ * So, we render the input as default <input type="submit"> for Ajax forms.
+ * @see https://www.drupal.org/project/drupal/issues/2998908
+ */
+#}
+<input{{ attributes }} />{{ children }}

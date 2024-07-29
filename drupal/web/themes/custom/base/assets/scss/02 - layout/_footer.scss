@@ -1,0 +1,189 @@
+@import '../utilities.scss';
+
+.site-wrap {
+  footer {
+    border-top: 4px solid $secondary;
+    background: $primary-xdk;
+    color: #fff;
+  }
+
+  .footer {
+    padding: $space-xl 0 $space-md;
+
+    @include breakpoint(sm-max) {
+      padding: $space-lg $space-sm;
+    }
+
+    p {
+      color: #fff;
+      margin-bottom: 0;
+    }
+
+    a {
+      color: $secondary;
+
+      &:hover,
+      &:focus {
+        color: #fff;
+      }
+    }
+  }
+
+  .global-footer {
+    align-items: start;
+    display: grid;
+    gap: $space-lg;
+    grid: auto / 1fr 2fr 1.5fr;
+
+    @include breakpoint(sm-max) {
+      grid: auto / 1fr;
+    }
+
+    h4 {
+      margin-bottom: $space-md;
+    }
+
+    .contact {
+      .address {
+        margin-bottom: $space-md;
+      }
+
+      .btn {
+        margin: $space-md 0 0 0;
+      }
+    }
+
+    .links {
+      > .field {
+        display: flex;
+        gap: $space-xl;
+
+        @include breakpoint(sm-max) {
+          display: block;
+        }
+
+        > div {
+          &:first-child {
+            .base__link-list {
+
+              ul {
+                display: grid;
+                gap: 0 $space-sm;
+                grid: auto / 1fr 1fr;
+
+                @include breakpoint(sm-max) {
+                  grid: auto / 1fr;
+                }
+              }
+            }
+          }
+
+          + div {
+            @include breakpoint(sm-max) {
+              margin-top: $space-md;
+            }
+          }
+
+          .base__link-list {
+            h4 {
+              @include breakpoint(sm-max) {
+                background: $primary;
+                margin-bottom: 0;
+                padding: $space-sm $space-md;
+                position: relative;
+
+                &::after {
+                  content: "\e914";
+                  font-family: icomoon;
+                  position: absolute;
+                  right: 10px;
+                  top: 8px;
+                }
+
+                &.open {
+                  margin-bottom: $space-sm;
+
+                  &::after {
+                    content: "\e912";
+                  }
+                }
+              }
+            }
+
+            ul {
+              @include breakpoint(sm-max) {
+                margin: 0;
+                max-height: 0;
+                overflow: hidden;
+              }
+
+              li {
+                padding-left: 0;
+
+                &::before {
+                  display: none;
+                }
+
+                &:hover,
+                &:focus {
+                  padding-left: 0;
+                }
+
+                a {
+                  color: #fff;
+
+                  &:hover,
+                  &:focus {
+                    color: $secondary;
+                    text-decoration-color: $secondary;
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+
+    .social-links {
+      margin-top: $space-md;
+
+      ul {
+        margin: $space-md 0;
+        padding: 0;
+
+        li {
+          + li {
+            margin-left: $space-md;
+          }
+        }
+      }
+    }
+  }
+
+  .copyright {
+    padding: $space-md 0;
+
+    p {
+      font-size: $font-xxs;
+      margin-bottom: 0;
+
+      @include breakpoint(sm-max) {
+        text-align: center;
+      }
+    }
+
+    a {
+      color: #fff;
+      text-decoration: underline;
+
+      &:hover,
+      &:focus {
+        color: $secondary;
+        text-decoration-color: $secondary;
+        -webkit-text-decoration-line:  underline;
+        -webkit-text-decoration-color:  $secondary;
+      }
+    }
+  }
+}

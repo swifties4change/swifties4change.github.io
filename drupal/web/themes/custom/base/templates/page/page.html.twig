@@ -1,0 +1,92 @@
+{#
+/**
+ * General utility variables:
+ * - base_path: The base URL path of the Drupal installation. Will usually be
+ *   "/" unless you have installed Drupal in a sub-directory.
+ * - is_front: A flag indicating if the current page is the front page.
+ * - logged_in: A flag indicating if the user is registered and signed in.
+ * - is_admin: A flag indicating if the user has permission to access
+ *   administration pages.
+ */
+#}
+<div {{ wrap }}>
+	<a id="main-content" tabindex="-1"></a>
+	{# link is in html.html.twig #}
+	{% include '/themes/custom/base/templates/includes/header.html.twig' %}
+	{% if page.banner %}
+		<section class="banner" role="banner" aria-label="Banner">
+			<div class="container-fluid">
+				<div class="row">{{ page.banner }}</div>
+			</div>
+		</section>
+	{% endif %}
+	{% if page.top %}
+		<section class="top" role="complementary" aria-label="Featured Top Content" id="featured">
+			<div class="container-fluid">
+				<div class="row">{{ page.top }}</div>
+			</div>
+		</section>
+	{% endif %}
+	{% set content = page.content|render|striptags|trim|length is not empty %}
+	{% set contentTop = page.content_top|render %}
+	{% if content or contentTop %}
+		<section class="main" role="main" aria-label="Main Content">
+			{% if contentTop|striptags('<div><img><ul><a>')|trim is not empty %}
+				<section class="content-top">
+					<div class="container">{{ page.content_top }}
+					</div>
+				</section>
+			{% endif %}
+			{% if content %}
+				<section class="content" aria-label="Content">
+					<div class="container">
+						{% set sidebar_bottom = page.sidebar_bottom|render|striptags|trim|length %}
+						{% set sidebar_top = page.sidebar_top|render|striptags|trim|length %}
+						{% set content = page.content|render|striptags|trim|length %}
+						{% if sidebar_top > 1 or sidebar_bottom > 1 %}
+							<div class="has-sidebar">
+								<div class="main-content">{{ page.content }}</div>
+								{% if page.sidebar_top %}
+									<div class="sidebar top">{{ page.sidebar_top }}</div>
+								{% endif %}
+								{% if page.sidebar_bottom %}
+									<div class="sidebar bottom">{{ page.sidebar_bottom }}</div>
+								{% endif %}
+							</div>
+						{% else %}
+							{% if content > 1 %}
+								<div class="no-sidebar">
+									<div class="main-content">{{ page.content }}</div>
+								</div>
+							{% endif %}
+						{% endif %}
+					</div>
+				</section>
+			{% endif %}
+			{% if page.content_bottom %}
+				<section class="content-bottom">
+					<div class="container">{{ page.content_bottom }}</div>
+				</section>
+			{% endif %}
+		</section>
+	{% endif %}
+	{% if page.feature %}
+		<section class="feature" role="complementary" aria-label="Featured Bottom Content">
+			<div class="container-fluid">
+				<div class="row">{{ page.feature }}</div>
+			</div>
+		</section>
+	{% endif %}
+	{% set page_bottom = page.bottom|render|striptags|trim|length %}
+	{% if page_bottom > 1 %}
+		<section class="bottom" role="complementary" aria-label="Bottom Content">{{ page.bottom }}</section>
+	{% endif %}
+	{% include '/themes/custom/base/templates/includes/footer.html.twig' %}
+</div>
+{% if page.offcanvas %}
+	<section class="offcanvas">
+		<div class="container-fluid">
+			<div class="row">{{ page.offcanvas }}</div>
+		</div>
+	</section>
+{% endif %}

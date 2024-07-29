@@ -1,0 +1,171 @@
+@import '../utilities.scss';
+
+.hero-wrap {
+  margin-bottom: $space-xl;
+
+  @include breakpoint(sm-max) {
+    margin-bottom: $space-md;
+  }
+}
+
+.base__hero {
+  background: $primary-xdk;
+  border-bottom: 4px solid $secondary;
+  position: relative;
+
+  &.has-img {
+    border-bottom: none;
+    margin-bottom: 0;
+
+    .img {
+      position: relative;
+
+      &::before {
+        background: rgba(0, 0, 0, .5);
+        content: "";
+        height: 100%;
+        left: 0;
+        position: absolute;
+        top: 0;
+        width: 100%;
+        z-index: 1;
+      }
+
+      img {
+        aspect-ratio: 2.5 / 1;
+        display: block;
+        object-fit: cover;
+        width: 100%;
+
+        @include breakpoint(xs) {
+          aspect-ratio: 2.5 / 3;
+        }
+
+        @include breakpoint(xxxs) {
+          aspect-ratio: 2.5 / 4;
+        }
+
+        @include breakpoint(sm) {
+          aspect-ratio: 3 / 2;
+        }
+
+        @include breakpoint(xl) {
+          aspect-ratio: 3 / 1;
+        }
+      }
+
+      + .blurb {
+        bottom: calc($space-lg * 2);
+        display: inline;
+        position: absolute;
+        width: 100%;
+        z-index: 2;
+
+        @include breakpoint(sm-max) {
+          bottom: 0;
+          display: block;
+          padding: $space-lg $space-md;
+        }
+      }
+    }
+  }
+
+
+
+  &.has-video {
+    .img {
+      &::before {
+        background: rgba(0, 0, 0, .7) !important;
+      }
+
+      img {
+        aspect-ratio: 2 / 1;
+
+        @include breakpoint(xs) {
+          aspect-ratio: 2 / 3;
+        }
+
+        @include breakpoint(lg) {
+          aspect-ratio: 5 / 2;
+        }
+
+        opacity: 0;
+
+        @include breakpoint(sm-max) {
+          opacity: 1;
+        }
+      }
+    }
+
+    .video {
+      height: 100%;
+      left: 0;
+      overflow: hidden;
+      position: absolute;
+      top: 0;
+      width: 100%;
+
+      @include breakpoint(sm-max) {
+        display: none;
+      }
+    }
+  }
+
+  &:not(.has-img) {
+    background: $primary-xdk;
+    color: #fff;
+    overflow: hidden;
+    padding: $space-xl 0;
+    position: relative;
+
+    @include breakpoint(xs) {
+      padding: $space-lg 0;
+    }
+
+    @media print {
+      padding: $space-lg 0;
+    }
+  }
+
+
+
+  .intro {
+    max-width: 800px;
+  }
+
+  .blurb {
+    h1 {
+      color: #fff;
+      font-family: $font-display;
+      font-size: $font-xxl;
+      line-height: 1em;
+    }
+
+    p {
+      color: #fff;
+      font-size: $font-sm;
+
+      &:last-child {
+        margin: 0;
+      }
+    }
+  }
+
+  + .crumbs {
+    color: $gray-dk;
+    margin: 20px 0 30px;
+
+    span {
+      color: $primary-lt;
+    }
+
+    a {
+      color: $primary;
+
+      &:hover,
+      &:focus {
+        color: $primary-lt;
+      }
+    }
+  }
+}

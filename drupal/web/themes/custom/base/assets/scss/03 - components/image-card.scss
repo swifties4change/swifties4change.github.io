@@ -1,0 +1,12 @@
+@import '../utilities.scss';
+
+.base__image-card {
+    .img {
+        margin-bottom: $space-md;
+        position: relative;
+
+        img {
+            width: 100%;
+        }
+    }
+}

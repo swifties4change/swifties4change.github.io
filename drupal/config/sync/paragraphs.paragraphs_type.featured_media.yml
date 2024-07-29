@@ -1,0 +1,10 @@
+uuid: 9597295a-26cf-4b09-9757-8c42e1490116
+langcode: en
+status: true
+dependencies: {  }
+id: featured_media
+label: 'Featured Media'
+icon_uuid: null
+icon_default: null
+description: ''
+behavior_plugins: {  }

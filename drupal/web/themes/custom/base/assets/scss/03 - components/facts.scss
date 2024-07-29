@@ -1,0 +1,110 @@
+@import '../utilities.scss';
+
+.fact {
+  height: 100%;
+
+  .inner {
+    height: 100%;
+    padding: $space-lg;
+    text-align: center;
+  }
+
+  &.primary {
+    .inner {
+      background: $primary;
+      color: #fff;
+    }
+  }
+
+  &.primary-lt {
+    .inner {
+      background: $primary-lt;
+      color: #000;
+    }
+  }
+
+  &.primary-dk {
+    .inner {
+      background: $primary-dk;
+      color: #fff;
+    }
+  }
+
+  &.secondary {
+    .inner {
+      background: $secondary;
+      color: #000;
+    }
+  }
+
+  &.tertiary {
+    .inner {
+      background: $tertiary;
+      color: #000;
+    }
+  }
+
+  &.gray {
+    .inner {
+      background: $gray-xl;
+      color: #000;
+    }
+  }
+
+  &.black {
+    .inner {
+      background: #000;
+      color: #fff;
+    }
+  }
+
+  &.white {
+    .inner {
+      background: #fff;
+      color: #000;
+    }
+  }
+
+  &.bordered {
+    .inner {
+      background: #fff;
+      border: 2px solid $secondary;
+      color: #000;
+    }
+  }
+
+  .number {
+    display: flex;
+    font-family: $font-script;
+    font-size: $font-hero;
+    font-weight: 600;
+    gap: $space-xs;
+    justify-content: center;
+    line-height: 1em;
+    margin-bottom: $space-sm;
+
+    @include breakpoint(sm-max) {
+      font-size: $font-xl;
+    }
+  }
+
+  p {
+    font-family: $font-display;
+    font-size: $font-lg;
+    margin: 0 auto;
+    max-width: 250px;
+
+    + a {
+      background: rgba(#fff, .2);
+      border-radius: $border-radius;
+      color: #fff;
+      display: inline-block;
+      padding: $space-xs $space-md;
+      text-decoration: none;
+    }
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+}

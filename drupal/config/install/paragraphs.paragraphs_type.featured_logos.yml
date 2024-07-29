@@ -1,0 +1,10 @@
+uuid: 8aef9ab0-13eb-4245-8754-18cad4d3cfba
+langcode: en
+status: true
+dependencies: {  }
+id: featured_logos
+label: 'Featured Logos'
+icon_uuid: null
+icon_default: null
+description: ''
+behavior_plugins: {  }

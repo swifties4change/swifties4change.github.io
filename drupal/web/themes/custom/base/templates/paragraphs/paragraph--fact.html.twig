@@ -1,0 +1,17 @@
+{{ attach_library('base/facts') }}
+{% set catch_cache = content|render %}
+{% set color = paragraph.field_background_color.value %}
+{% if color is not empty %}
+{% set bg = color ~ ' has-bg'%}
+{% endif %}
+<div class="fact {{bg}}">
+  <div class="inner">
+    <div class="number" data-count="{{ content.field_number.0 }}">
+      <span>{{ content.field_prefix}}</span>
+      <span class="count">{{ content.field_number}}</span>
+      <span>{{ content.field_suffix}}</span>
+    </div>
+    <p class="title">{{ content.field_title.0 }}</p>
+    <p>{{ content.field_caption.0 }}</p>
+  </div>
+</div>

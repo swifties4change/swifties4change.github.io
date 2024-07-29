@@ -1,0 +1,24 @@
+uuid: 26ead905-8afe-4a85-a204-1c1f1218ac76
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_rich_text
+    - filter.format.full_html
+    - paragraphs.paragraphs_type.hero
+  module:
+    - text
+id: paragraph.hero.field_rich_text
+field_name: field_rich_text
+entity_type: paragraph
+bundle: hero
+label: 'Rich Text'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  allowed_formats:
+    - full_html
+field_type: text_long

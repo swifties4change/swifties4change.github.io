@@ -1,0 +1,23 @@
+@import '../utilities.scss';
+
+.home-wrap {
+  .base__hero {
+    margin-bottom: 0;
+
+    .crumbs {
+      display: none;
+    }
+  }
+
+  .main {
+    margin: 0 !important;
+
+    + .feature {
+      margin-top: 0;
+    }
+
+    .content-top {
+      display: none;
+    }
+  }
+}

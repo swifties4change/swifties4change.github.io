@@ -1,0 +1,17 @@
+uuid: 345eb4de-9a51-4666-ae9e-dea4ed86dc92
+langcode: en
+status: true
+dependencies:
+  module:
+    - focal_point
+name: 2000x800
+label: '2000x800 (5:2)'
+effects:
+  79737a41-41d8-4b75-b670-2e5e805f14dd:
+    uuid: 79737a41-41d8-4b75-b670-2e5e805f14dd
+    id: focal_point_scale_and_crop
+    weight: 1
+    data:
+      width: 2000
+      height: 800
+      crop_type: focal_point

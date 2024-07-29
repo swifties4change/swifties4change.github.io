@@ -1,0 +1,86 @@
+@import '../utilities.scss';
+
+.infographic {
+  margin: $space-lg 0;
+  position: relative;
+
+  @include breakpoint(sm-max) {
+    margin: $space-md 0;
+  }
+
+  > .img {
+    @include breakpoint(sm-max) {
+      position: relative !important;
+    }
+  }
+
+  .img {
+    position: absolute;
+    top: 0;
+    width: 50%;
+
+    @include breakpoint(sm-max) {
+      width: 100%;
+    }
+  }
+
+  .infographic-item {
+    box-shadow: none;
+    display: grid;
+    gap: $space-lg;
+    grid: auto / 1fr 1fr;
+    outline: none;
+
+    @include breakpoint(sm-max) {
+      grid: auto / 1fr;
+      gap: $space-md;
+    }
+
+    &:has(~ .infographic-item:hover) {
+      opacity: .5;
+    }
+
+    &:hover,
+    &:focus {
+      cursor: pointer;
+
+      .img {
+        opacity: 1;
+      }
+
+      .caption {
+        .infographic-title {
+          color: $secondary;
+        }
+      }
+
+      ~ .infographic-item {
+        opacity: .5;
+      }
+    }
+
+    + .infographic-item {
+      .caption {
+        border-top: 2px solid $secondary;
+        padding-top: $space-md;
+      }
+    }
+
+    .img {
+      opacity: 0;
+    }
+
+    .caption {
+      grid-column: 2/3;
+
+      @include breakpoint(sm-max) {
+        grid-column: 1/2;
+        grid-row: 2/3;
+      }
+
+      .infographic-title {
+        margin-bottom: $space-sm;
+      }
+    }
+  }
+}

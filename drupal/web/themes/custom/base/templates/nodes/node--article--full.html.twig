@@ -1,0 +1,24 @@
+<article{{attributes.addClass('article')}}>
+
+	{% if content.field_long_title.0 %}
+		<h1>
+			{{content.field_long_title.0}}
+		</h1>
+	{% else %}
+		<h1>{{label}}</h1>
+	{% endif %}
+	{% if content.field_image.0 %}
+		<div class="image">
+			{{content.field_image}}
+		</div>
+	{% endif %}
+	<div class="text">
+		<p class="date">
+			<strong>{{node.getCreatedTime()|date("F j, Y")}}</strong>
+		</p>
+		{{ content.field_content_blocks}}
+		{% if content.field_related_topics.0 %}
+			{{ content.field_related_topics}}
+		{% endif %}
+	</div>
+</article>

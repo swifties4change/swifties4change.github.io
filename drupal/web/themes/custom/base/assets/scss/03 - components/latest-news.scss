@@ -1,0 +1,91 @@
+@import '../utilities.scss';
+
+.latest-news {
+  background: $primary-dk;
+  color: #fff;
+  padding: calc(2 * $space-md);
+
+  .view {
+    position: relative;
+
+    header {
+      align-content: center;
+      background: rgba($primary-dk, .8);
+      display: flex;
+      flex-wrap: wrap;
+      height: 100%;
+      left: 0;
+      padding: $space-md;
+      position: absolute;
+      top: 0;
+      width: 20vw;
+      z-index: 2;
+
+      @include breakpoint(md) {
+        width: 40vw;
+      }
+
+      @include breakpoint(sm-max) {
+        position: relative;
+        width: 100%;
+      }
+
+      &::after {
+        background: linear-gradient(to top right, rgba($primary-dk, .8) 50%, transparent 0);
+        content: "";
+        height: calc(100% + 40px);
+        left: 100%;
+        position: absolute;
+        top: -20px;
+        width: 150px;
+      }
+    }
+
+    .view-content {
+      &:not(.slick-slider) {
+        align-items: stretch;
+        display: flex;
+        justify-content: end;
+      }
+
+      .slick-prev {
+        display: none !important;
+      }
+
+      .slick-arrow {
+        background: $secondary-lt;
+        border-radius: 100%;
+        box-shadow: none;
+        height: 50px;
+        outline: none;
+        width: 50px;
+
+        &::before {
+          color: $gray-dk;
+        }
+
+        &:hover,
+        &:focus {
+          background: $secondary-dk;
+
+          &::before {
+            color: #fff;
+          }
+        }
+      }
+
+      .slick-track {
+        align-items: stretch;
+        display: flex;
+      }
+
+      article {
+        box-shadow: none;
+        float: none;
+        height: auto;
+        margin: 0 $space-md;
+        outline: none;
+      }
+    }
+  }
+}

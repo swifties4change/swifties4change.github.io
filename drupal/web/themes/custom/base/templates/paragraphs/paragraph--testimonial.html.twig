@@ -1,0 +1,26 @@
+{{ attach_library('base/testimonials') }}
+{% set catch_cache = content|render %}
+{% block content %}
+	<div class="testimonial">
+		{% if content.field_image.0 %}
+			<div class="img">
+				{{content.field_image}}
+			</div>
+		{% endif %}
+		<div class="text">
+			<div class="blurb">
+				<p>{{content.field_plain_text.0}}</p>
+			</div>
+			{% if content.field_name.0 or content.field_title.0 %}
+				<span class="name">
+					{{ content.field_name }}
+				</span>
+				{% if content.field_title.0 %}
+					<span class="title">
+						{{ content.field_title }}
+					</span>
+				{% endif %}
+			{% endif %}
+		</div>
+	</div>
+{% endblock content %}

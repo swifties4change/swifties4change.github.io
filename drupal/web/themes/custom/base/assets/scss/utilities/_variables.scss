@@ -1,0 +1,72 @@
+/*COLORS*/
+$gray-xl: #DEDEDE;
+$gray-lt: #A0A0A0;
+$gray: #737373;
+$gray-md: #6f6f6f;
+$gray-dk: #302B2B;
+$gray-xdk: #1F1F1F;
+$red-lt: #FF6B6B;
+$red: #FF3131;
+$red-dk: #B30000;
+$orange-lt: #fcbaa9;
+$orange: #f45b1f;
+$orange-dk: #c34818;
+$gold-lt: #EFBE74;
+$gold: #FFC857;
+$gold-dk: #9a6100;
+$green-lt: #A7E583;
+$green: #71BF44;
+$green-dk: #368701;
+$blue-lt: #596FC0;
+$blue: #36498E;
+$blue-dk: #23305C;
+$blue-xdk: #002B3F;
+$teal-lt: #a5e5f2;
+$teal: #639FAB;
+$teal-dk: #0f7384;
+$purple-lt: #cea2d0;
+$purple: #C46BAE;
+$purple-dk: #521e59;
+$pink-lt: #ff92a4;
+$pink: #ff647d;
+$pink-dk: #41031B;
+
+$primary: $blue;
+$primary-lt: $blue-lt;
+$primary-dk: $blue-dk;
+$primary-xdk: $blue-xdk;
+$secondary: $red;
+$secondary-lt: $red-lt;
+$secondary-dk: $red-dk;
+$tertiary: $teal;
+$tertiary-lt: $teal-lt;
+$tertiary-dk: $teal-dk;
+
+/*FONTS*/
+$font-script: 'Roboto', sans-serif;
+$font-display: 'Roboto Condensed', sans-serif;
+$font-sans: 'Lato', sans-serif;
+$font-xxs: 16px;
+$font-xs: 18px;
+$font-sm: 21px;
+$font-md: 24px;
+$font-lg: 32px;
+$font-xl: 36px;
+$font-xxl: 60px;
+$font-hero: 72px;
+
+/*BORDER RADIUS*/
+$border-radius: 0;
+$border-radius-lg: 30px;
+
+/*CSS ANIMATIONS*/
+$cubic: cubic-bezier(0.0, 0.0, 0.2, 1);
+
+/*SPACING*/
+$space-xs: 5px;
+$space-sm: 10px;
+$space-md: 20px;
+$space-lg: 30px;
+$space-xl: 50px;
+$space-xxl: 100px;
+

@@ -1,0 +1,189 @@
+@import '../utilities.scss';
+
+.site-wrap {
+  .drawer {
+    position: relative;
+    z-index: 2;
+  }
+
+  .alert {
+    background: #fff;
+    border-radius: 0;
+    color: $gray-dk;
+    margin: 0;
+    padding: $space-md 0;
+    position: relative;
+    display: none;
+
+    &.shown {
+      display: block;
+    }
+
+    &.info {
+      background: $primary;
+      color: #fff;
+
+      .inner {
+        &::before {
+          color: #fff;
+          content: "\e903";
+        }
+
+        a {
+          color: $secondary-lt;
+          font-weight: 600;
+          text-decoration: underline $secondary-lt;
+          -webkit-text-decoration-line: underline;
+          -webkit-text-decoration-color: $secondary-lt;
+
+          &:hover,
+          &:focus {
+            color: #fff;
+          }
+        }
+      }
+
+      .alert-close {
+        color: #fff;
+
+        &:hover,
+        &:focus {
+          color: $secondary-lt;
+        }
+      }
+    }
+
+    &.warning {
+      background: $tertiary;
+      color: $gray-dk;
+
+      .inner {
+        &::before {
+          color: $gray-dk;
+          content: "\e900";
+        }
+
+        a {
+          color: $primary;
+          font-weight: 600;
+          text-decoration: underline $tertiary-dk;
+          -webkit-text-decoration-line: underline;
+          -webkit-text-decoration-color: $tertiary-dk;
+
+          &:hover,
+          &:focus {
+            color: #fff;
+          }
+        }
+      }
+
+      .alert-close {
+
+        &:hover,
+        &:focus {
+          color: $tertiary-dk;
+        }
+      }
+    }
+
+    &.emergency {
+      background: $red-dk;
+      color: #fff;
+
+      .inner {
+        &::before {
+          color: #fff;
+          content: "\e902";
+        }
+
+        a {
+          color: #fff;
+          font-weight: 600;;
+          text-decoration: underline $red-lt;
+          text-decoration-color: $red-lt;
+          -webkit-text-decoration-line: underline;
+          -webkit-text-decoration-color: $red-lt;
+
+
+          &:hover,
+          &:focus {
+            color: $tertiary;
+            text-decoration-color: $tertiary-lt;
+            -webkit-text-decoration-line: underline;
+            -webkit-text-decoration-color: $tertiary-lt;
+          }
+        }
+      }
+
+      .alert-close {
+
+        &:hover,
+        &:focus {
+          color: $tertiary;
+        }
+      }
+    }
+
+    .inner {
+      align-items: center;
+      display: flex;
+      gap: $space-sm;
+      position: relative;
+      padding-right: $space-xl;
+
+      @include breakpoint(sm-max) {
+        flex-wrap: wrap;
+      }
+
+      &::before {
+        display: flex;
+        font-family: icomoon;
+        font-size: 26px;
+
+        @include breakpoint(sm-max) {
+          align-self: start;
+        }
+      }
+    }
+
+    .title {
+      font-size: $font-xxs;
+      font-weight: 700;
+      text-transform: uppercase;
+    }
+
+    p {
+      font-size: $font-xxs;
+      margin: 0;
+    }
+
+    .more-link {
+      a {
+        display: block;
+        font-size: $font-xxs;
+        font-weight: 600;
+        text-decoration: underline;
+
+        @include breakpoint(sm-max) {
+          margin-top: $space-md;
+        }
+      }
+    }
+
+    .alert-close {
+      cursor: pointer;
+      font-size: 32px;
+      position: absolute;
+      right: 15px;
+      top: 50%;
+      z-index: 2;
+      @include translate(0, -50%);
+      @include transition(color .3s linear);
+
+      @include breakpoint(sm-max) {
+        top: 0;
+        @include translate(0, 0);
+      }
+    }
+  }
+}

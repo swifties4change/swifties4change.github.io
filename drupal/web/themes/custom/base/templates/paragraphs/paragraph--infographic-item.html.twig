@@ -1,0 +1,11 @@
+{{ attach_library('base/infographic') }}
+{% set id = content.field_title|render|striptags|trim|lower|slice(0, 80)|replace({' ': '-'}) %}
+{% block content %}
+	<div class="infographic-item" aria-label="Click or press space to show this infographic section" id="infographic-{{ id }}" tabindex="0">
+		<div class="img">{{ content.field_image }}</div>
+		<div class="caption">
+			<h4 class="infographic-title">{{ content.field_title.0 }}</h4>
+			<p>{{ content.field_caption.0 }}</p>
+		</div>
+	</div>
+{% endblock %}

@@ -1,0 +1,174 @@
+@import '../utilities.scss';
+
+.base__icon-card {
+  height: 100%;
+
+  .inner {
+    background: #fff;
+    color: $gray-dk;
+    display: grid;
+    gap: $space-md;
+    grid: auto / 1fr;
+    min-height: 100%;
+    padding: $space-xl $space-lg;
+
+    @include breakpoint(sm-max) {
+      padding: $space-lg $space-md;
+    }
+
+    .icon {
+      margin: 0 auto;
+      position: relative;
+      text-align: left;
+      width: 100%;
+
+      svg {
+        height: 48px;
+        fill: #000;
+
+        > * {
+
+          fill: #000;
+        }
+      }
+
+      img {
+        width: 100%
+      }
+    }
+
+    p {
+      &:last-of-type {
+        margin-bottom: 0;
+      }
+    }
+  }
+
+  &:not(.has-bg) {
+    .inner {
+      padding: $space-sm;
+    }
+  }
+
+  &.primary {
+    .inner {
+      background: $primary;
+      color: #fff;
+    }
+
+    .icon {
+      svg {
+        fill: #fff;
+
+        > * {
+
+          fill: #fff;
+        }
+      }
+    }
+  }
+
+  &.primary-lt {
+    .inner {
+      background: $primary-lt;
+      color: #000;
+    }
+  }
+
+  &.primary-dk {
+    .inner {
+      background: $primary-dk;
+      color: #fff;
+    }
+
+    .icon {
+      svg {
+        fill: #fff;
+
+        > * {
+
+          fill: #fff;
+        }
+      }
+    }
+  }
+
+  &.secondary {
+    .inner {
+      background: $secondary;
+      color: #000;
+    }
+  }
+
+  &.tertiary {
+    .inner {
+      background: $tertiary;
+      color: #000;
+    }
+  }
+
+  &.gray {
+    .inner {
+      background: $gray-dk;
+      color: #fff;
+    }
+
+    .icon {
+      svg {
+        fill: #fff;
+
+        > * {
+
+          fill: #fff;
+        }
+      }
+    }
+  }
+
+  &.black {
+    .inner {
+      background: #000;
+      color: #fff;
+    }
+
+    .icon {
+      svg {
+        fill: #fff;
+
+        > * {
+
+          fill: #fff;
+        }
+      }
+    }
+  }
+
+  &.white {
+    .inner {
+      background: #fff;
+      color: $gray-dk;
+    }
+  }
+}
+
+.grid {
+  &.one {
+    .base__icon-card {
+      text-align: left;
+
+      .inner {
+        grid: auto / 150px 1fr;
+
+        @include breakpoint(xs) {
+          grid: auto / 1fr;
+          text-align: center;
+        }
+      }
+
+      + .base__icon-card {
+        border-top: 1px solid $gray;
+        padding-top: 30px;
+      }
+    }
+  }
+}

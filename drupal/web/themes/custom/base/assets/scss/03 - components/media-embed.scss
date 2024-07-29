@@ -1,0 +1,102 @@
+@import '../utilities.scss';
+
+.base__media-embed {
+  display: block;
+  margin: $space-lg 0;
+  overflow: hidden;
+  position: relative;
+
+  .media {
+    margin: 0;
+
+    img {
+      margin-bottom: $space-xl;
+    }
+
+    &.slick-slide {
+      @include breakpoint(sm-max) {
+        margin-bottom: $space-md;
+      }
+    }
+
+    img {
+      // aspect-ratio: 16 / 9;
+      margin-bottom: 0;
+      width: 100%;
+    }
+
+    .embed-responsive {
+      margin: 0;
+    }
+
+    .caption {
+      border-left: 3px solid $tertiary;
+      font-size: $font-xs;
+      line-height: 1.5em;
+      margin: $space-md 0 0 0;
+      padding: 0px $space-md 0 $space-md;
+
+      @include breakpoint(sm) {
+        padding: 0px calc(2 * $space-lg) 0 $space-md;
+      }
+
+      @include breakpoint(xs) {
+        margin: $space-md 0;
+        padding: 0 0 0 $space-md;
+      }
+    }
+  }
+
+  .slider {
+    margin-bottom: $space-xl;
+
+    @include breakpoint(sm-max) {
+      margin-bottom: 0;
+    }
+  }
+
+  .arrows {
+    bottom: 0;
+    position: absolute;
+    right: 0;
+
+    @include breakpoint(sm-max) {
+      bottom: auto;
+      position: relative;
+      text-align: center;
+      width: auto;
+    }
+
+    .arrow {
+      background: $primary-dk;
+      border-radius: 100%;
+      color: #fff;
+      cursor: pointer;
+      display: inline-block;
+      font-size: $font-sm;
+      height: 1.5em;
+      line-height: 1.5em;
+      text-align: center;
+      width: 1.5em;
+      @include transition(background .3s linear);
+
+      &:hover,
+      &:focus {
+        background: $primary;
+      }
+
+      &.slick-hidden {
+        display: none;
+      }
+
+      &.slick-disabled {
+        cursor: not-allowed;
+        opacity: .5;
+      }
+
+      + .arrow {
+        margin-left: $space-sm;
+      }
+    }
+  }
+}

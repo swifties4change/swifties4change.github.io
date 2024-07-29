@@ -1,0 +1,8 @@
+{{ attach_library('base/accordions') }}
+{% set id = content.field_title|render|striptags|trim|lower|slice(0, 80)|replace({' ': '-'}) %}
+{% block content %}
+	<div class="accordion-item">
+		<h4 class="accordion-title" aria-label="Click or press space to open this accordion" id="{{ id }}" tabindex="0">{{ content.field_title.0 }}</h4>
+		<div>{{ content.field_rich_text }}</div>
+	</div>
+{% endblock %}

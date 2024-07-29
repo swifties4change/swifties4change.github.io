@@ -1,0 +1,156 @@
+@import '../utilities.scss';
+
+.base__featured-media {
+  margin: $space-xl 0;
+
+  .inner {
+    align-items: center;
+    display: grid;
+    gap: $space-xl;
+    grid: auto / 5fr 4fr;
+
+    @include breakpoint(sm-max) {
+      gap: $space-md;
+      grid: auto / 1fr;
+    }
+  }
+
+  &.right {
+    .inner {
+      grid: auto / 4fr 5fr;
+
+      @include breakpoint(sm-max) {
+        grid: auto / 1fr;
+      }
+    }
+
+    .img {
+      order: 1;
+
+      @include breakpoint(sm-max) {
+        order: 0;
+      }
+    }
+  }
+
+  &.has-bg {
+
+    &.primary {
+      .blurb {
+        background: $primary;
+      }
+    }
+
+    &.secondary {
+      .blurb {
+        background: $secondary;
+      }
+    }
+
+    &.tertiary {
+      .blurb {
+        background: $tertiary;
+      }
+
+      .action-link {
+        @include action-link($tertiary, $gray-dk);
+      }
+    }
+
+    &.gray {
+      .blurb {
+        background: $gray-dk;
+      }
+    }
+
+    &.black {
+      .blurb {
+        background: #000;
+      }
+    }
+
+    &.white {
+      .blurb {
+        background: #fff;
+
+        h2,
+        h3,
+        h4 {
+          color: $primary;
+        }
+
+        p {
+          color: $gray-dk;
+        }
+      }
+    }
+
+    .inner {
+      gap: 0;
+    }
+
+    .blurb {
+      align-content: center;
+      color: #fff;
+      display: grid;
+      justify-items: left;
+      min-height: 100%;
+      padding: $space-xl;
+
+      @include breakpoint(sm-max) {
+        padding: $space-md;
+      }
+
+      h2,
+      h3,
+      h4 {
+        color: #fff;
+      }
+    }
+  }
+
+  .blurb {
+    align-self: center;
+    position: relative;
+    z-index: 2;
+
+    .btn {
+      margin: $space-md 0 0 0;
+    }
+  }
+
+  .img {
+    overflow: hidden;
+
+    img {
+      aspect-ratio: 16 / 9;
+      width: 100%;
+    }
+  }
+}
+
+.base__layout {
+  .base__featured-media {
+    @include breakpoint(lg) {
+      margin: $space-xl auto;
+      width: 85%;
+    }
+
+    @include breakpoint(sm-max) {
+      margin: 0 auto;
+    }
+  }
+
+  .grid {
+
+    &.two,
+    &.three,
+    &.four {
+      .base__featured-media {
+        .inner {
+          grid: auto / 1fr;
+        }
+      }
+    }
+  }
+}

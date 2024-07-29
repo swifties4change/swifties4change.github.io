@@ -1,0 +1,2 @@
+!function(s,i,t){"use strict";s.behaviors.linkList={attach:function(s,t){i(once("link-list",".base__link-list h4",s)).click((function(){let s=i(this).next("ul").prop("scrollHeight")+4;i(this).toggleClass("open"),i(this).siblings().removeClass("open"),i(this).siblings("ul").css("max-height",0),i(this).hasClass("open")?i(this).next("ul").css("max-height",s+4):i(this).next("ul").css("max-height",0)}))}}}(Drupal,jQuery);
+//# sourceMappingURL=link-list.js.map

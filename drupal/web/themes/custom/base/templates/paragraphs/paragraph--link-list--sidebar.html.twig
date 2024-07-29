@@ -1,0 +1,8 @@
+{{ attach_library('base/link-list') }}
+{% set catch_cache = content|render %}
+<div class="link-list">
+    {% if paragraph.field_title.0 %}
+        <h3>{{ content.field_title }}</h3>
+    {% endif %}
+    {{ content.field_items }}
+</div>

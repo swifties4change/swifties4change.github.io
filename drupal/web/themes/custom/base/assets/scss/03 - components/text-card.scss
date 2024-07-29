@@ -1,0 +1,145 @@
+@import '../utilities.scss';
+
+.base__text-card {
+  height: 100%;
+
+  .inner {
+    border-radius: $border-radius;
+    height: 100%;
+    padding: $space-lg $space-lg $space-xl;
+
+    .heading {
+      border-bottom: 2px solid;
+      padding-bottom: $space-md;
+    }
+
+    p {
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+  }
+
+  &.primary {
+    .inner {
+      background: $primary;
+      color: #fff;
+
+      .heading {
+        border-color: $secondary-lt;
+      }
+    }
+  }
+
+  &.primary-lt {
+    .inner {
+      background: $primary-lt;
+      color: #000;
+
+      .heading {
+        border-color: $primary-dk;
+      }
+    }
+  }
+
+  &.primary-dk {
+    .inner {
+      background: $primary-dk;
+      color: #fff;
+
+      .heading {
+        border-color: $primary-lt;
+      }
+    }
+  }
+
+  &.secondary {
+    .inner {
+      background: $secondary;
+      color: #000;
+
+      .heading {
+        border-color: $secondary-dk;
+      }
+    }
+  }
+
+  &.tertiary {
+    .inner {
+      background: $tertiary;
+      color: #000;
+
+      .heading {
+        border-color: $tertiary-dk;
+      }
+    }
+  }
+
+  &.gray {
+    .inner {
+      background: $gray-xl;
+      color: #000;
+
+      .heading {
+        border-color: $primary-lt;
+      }
+    }
+  }
+
+  &.black {
+    .inner {
+      background: #000;
+      color: #fff;
+
+      .heading {
+        border-color: $secondary-lt;
+      }
+    }
+  }
+
+  &.white {
+    .inner {
+      background: #fff;
+      color: #000;
+
+      .heading {
+        border-color: $secondary-lt;
+      }
+    }
+  }
+
+  &.bordered {
+    .inner {
+      background: #fff;
+      border: 2px solid $secondary;
+      color: #000;
+
+      .heading {
+        border-color: $secondary-lt;
+      }
+    }
+  }
+}
+
+.base__layout {
+  &.one {
+    .text-card {
+      .inner {
+        padding: 90px 30px;
+        text-align: center;
+
+        @include breakpoint(sm-max) {
+          padding: 30px;
+        }
+
+        .blurb {
+          @include breakpoint(lg) {
+            display: block;
+            margin: 0 auto;
+            max-width: 80%;
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,96 @@
+@import '../utilities.scss';
+
+.site-wrap {
+
+    .crumbs {
+        border-bottom: 2px solid $gray-lt;
+        margin-bottom: 20px;
+
+        @media print {
+            display: none;
+        }
+
+        &.simple {
+            border-bottom: none;
+            margin-bottom: 20px;
+
+            .breadcrumb {
+                padding-bottom: 0;
+            }
+        }
+
+        .breadcrumb {
+            background: none;
+            color: $secondary;
+            font-size: 16px;
+            margin: 20px 0;
+            padding: 0;
+            position: relative;
+
+            @include breakpoint(xs) {
+                max-width: calc(100% - 132px);
+            }
+
+            i {
+                font-size: 15px;
+                left: 0;
+                margin-right: 5px;
+                position: absolute;
+                top: 7px;
+            }
+
+            span {
+                color: $gray-dk;
+            }
+
+            .text {
+                display: inline-block;
+                line-height: 22px;
+                padding-left: 20px;
+            }
+
+            a {
+                color: $primary;
+
+                &:hover,
+                &:focus {
+                    color: $primary-dk;
+                }
+
+                &.home {
+                    font-size: 0;
+                    position: relative;
+
+                    &::before {
+                        color: $gray-dk;
+                        content: "\e910";
+                        font-family: icomoon;
+                        font-size: 24px;
+                        line-height: 16px;
+                        vertical-align: -3px;
+                        @include transition(color .3s linear);
+                    }
+
+                    &:hover,
+                    &:focus {
+                        &::before {
+                            color: $primary;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    .viewall-crumb {
+        border-left: 1px solid #d8e6f8;
+        display: inline-block;
+        font-size: 16px;
+        margin: 20px 20px 20px 14px;
+        padding: 0 0 0 20px;
+
+        @include breakpoint(sm-max) {
+            display: none;
+        }
+    }
+}

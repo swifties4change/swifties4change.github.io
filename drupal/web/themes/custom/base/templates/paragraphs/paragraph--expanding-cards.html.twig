@@ -1,0 +1,34 @@
+{% set catch_cache = content|render %}
+{% set color = paragraph.field_background_color.value %}
+{% if color is not empty %}
+	{% set bg = color ~ ' has-bg'%}
+{% endif %}
+{% if paragraph.field_heading_size.value %}
+	{% set heading = paragraph.field_heading_size.value %}
+{% else %}
+	{% set heading = "h2" %}
+{% endif %}
+{% extends 'paragraph.html.twig' %}
+{% block content %}
+	<div class="base__expanding-cards {{bg}}">
+		<div class="container">
+			<div class="blurb">
+				{% if content.field_title.0 %}
+					<{{heading}}>{{ content.field_title.0 }}</{{heading}}>
+				{% endif %}
+				{% if content.field_rich_text.0 %}
+					<div class="body-text">{{ content.field_rich_text }}</div>
+				{% endif %}
+			</div>
+			<div class="arrows">
+				<div class="prev-slide arrow" tab-index="0">
+					<i class="icon-arrow-left"></i>
+				</div>
+				<div class="next-slide arrow" tab-index="0">
+					<i class="icon-arrow-right"></i>
+				</div>
+			</div>
+			<div class="grid normal four">{{ content.field_items }}</div>
+		</div>
+	</div>
+{% endblock content %}

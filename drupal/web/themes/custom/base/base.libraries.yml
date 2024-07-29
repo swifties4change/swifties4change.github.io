@@ -1,0 +1,192 @@
+global:
+  version: VERSION
+  css:
+    theme:
+      public/css/style.css: {}
+  js:
+    assets/js/script.js: {}
+  dependencies:
+    - core/drupal
+    - core/drupalSettings
+    - core/jquery
+    - core/once
+    # - base/bootstrap
+    - base/copy-clipboard
+    - base/enquire
+bootstrap:
+  css:
+    theme:
+      "//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css": {}
+  js:
+    "//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js": { type: external, minified: true }
+  dependencies:
+    - core/jquery
+enquire:
+  js:
+    "//cdnjs.cloudflare.com/ajax/libs/enquire.js/2.1.2/enquire.min.js": { type: external, minified: true }
+slick:
+  js:
+    "//cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick.min.js": { type: external, minified: true }
+  css:
+    theme:
+      "//cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick.min.css": {}
+      "//cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick-theme.min.css": {}
+  dependencies:
+    - core/jquery
+accordions:
+  version: 1.x
+  css:
+    theme:
+      public/css/components/accordions.css: {}
+  js:
+    public/js/components/accordions.js: {}
+alert:
+  version: 1.x
+  css:
+    theme:
+      public/css/components/alert.css: {}
+  js:
+    public/js/components/alerts.js: {}
+  dependencies:
+    - base/cookies
+expanding-cards:
+  version: 1.x
+  css:
+    theme:
+      public/css/components/expanding-cards.css: {}
+  js:
+    public/js/components/expanding-cards.js: {}
+  dependencies:
+    - base/slick
+facts:
+  version: 1.x
+  css:
+    theme:
+      public/css/components/facts.css: {}
+  js:
+    public/js/components/facts.js: {}
+  dependencies:
+    - base/slick
+featured-links:
+  version: 1.x
+  css:
+    theme:
+      public/css/components/featured-links.css: {}
+featured-media:
+  version: 1.x
+  css:
+    theme:
+      public/css/components/featured-media.css: {}
+featured-icon-cards:
+  version: 1.x
+  css:
+    theme:
+      public/css/components/featured-icon-cards.css: {}
+  js:
+    public/js/components/featured-icon-cards.js: {}
+  dependencies:
+    - base/slick
+featured-logos:
+  version: 1.x
+  css:
+    theme:
+      public/css/components/featured-logos.css: {}
+  js:
+    public/js/components/featured-logos.js: {}
+  dependencies:
+    - base/slick
+featured-news:
+  version: 1.x
+  js:
+    public/js/components/featured-news.js: {}
+  dependencies:
+    - base/slick
+full-width-cta:
+  version: 1.x
+  css:
+    theme:
+      public/css/components/full-width-cta.css: {}
+hero:
+  version: 1.x
+  css:
+    theme:
+      public/css/components/hero.css: {}
+icon-cards:
+  version: 1.x
+  css:
+    theme:
+      public/css/components/icon-card.css: {}
+image-cards:
+  version: 1.x
+  css:
+    theme:
+      public/css/components/image-card.css: {}
+infographic:
+  version: 1.x
+  css:
+    theme:
+      public/css/components/infographic.css: {}
+  js:
+    public/js/components/infographic.js: {}
+link-list:
+  version: 1.x
+  css:
+    theme:
+      public/css/components/link-list.css: {}
+  js:
+    public/js/components/link-list.js: {}
+latest-news:
+  version: 1.x
+  css:
+    theme:
+      public/css/components/latest-news.css: {}
+  js:
+    public/js/components/latest-news.js: {}
+media-embed:
+  version: 1.x
+  css:
+    theme:
+      public/css/components/media-embed.css: {}
+  js:
+    public/js/components/media-embed.js: {}
+  dependencies:
+    - base/slick
+testimonials:
+  version: 1.x
+  css:
+    theme:
+      public/css/components/testimonials.css: {}
+  js:
+    public/js/components/testimonials.js: {}
+  dependencies:
+    - base/slick
+team-member:
+  version: 1.x
+  css:
+    theme:
+      public/css/components/team-member.css: {}
+text-cards:
+  version: 1.x
+  css:
+    theme:
+      public/css/components/text-card.css: {}
+timeline:
+  version: 1.x
+  css:
+    theme:
+      public/css/components/timeline.css: {}
+  js:
+    public/js/components/timeline.js: {}
+  dependencies:
+    - base/slick
+cookies:
+  js:
+    "//cdnjs.cloudflare.com/ajax/libs/js-cookie/3.0.1/js.cookie.min.js": { type: external, minified: true }
+engagement_popup:
+  css:
+    theme:
+      public/css/components/engagement-popup.css: {}
+  js:
+    public/js/components/engagement-popup.js: {}
+  dependencies:
+    - base/cookies

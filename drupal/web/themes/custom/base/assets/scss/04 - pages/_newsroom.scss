@@ -1,0 +1,154 @@
+@import '../utilities.scss';
+
+.news-hero {
+  align-items: center;
+  display: grid;
+  grid: auto / 1fr 1fr;
+
+  @include breakpoint(sm-max) {
+    grid: auto / 1fr;
+  }
+
+  .blurb {
+    align-content: center;
+    color: #fff;
+    display: flex;
+    height: 100%;
+
+    .inner {
+      padding: $space-xxl;
+
+      @include breakpoint(sm-max) {
+        padding: $space-xl;
+      }
+    }
+  }
+
+  .featured-articles {
+    > div {
+      display: grid;
+      grid: auto / 1fr 1fr;
+
+      @include breakpoint(sm-max) {
+        grid: auto / 1fr;
+      }
+
+      div {
+        &:nth-of-type(2) {
+          article {
+            background: $primary-xdk;
+
+            &:hover,
+            &:focus {
+              background: $primary-dk;
+            }
+          }
+        }
+
+        &:nth-of-type(3) {
+          article {
+            background: $primary-lt;
+
+            &:hover,
+            &:focus {
+              background: $primary;
+
+              a {
+                color: #fff;
+
+                &.action-link {
+                  @include action-link(#fff, #fff)
+                }
+
+                &:hover,
+                &:focus {
+                  color: $secondary-lt;
+                  text-decoration: underline $secondary-lt;
+                  -webkit-text-decoration-line: underline;
+                  -webkit-text-decoration-color: $secondary-lt;
+                }
+              }
+            }
+
+            a {
+              color: #000;
+
+              &.action-link {
+                @include action-link(#000, #fff)
+              }
+            }
+          }
+        }
+
+        &:nth-of-type(4) {
+          article {
+            background: $primary-dk;
+
+            &:hover,
+            &:focus {
+              background: $primary-xdk;
+            }
+          }
+        }
+      }
+
+      article {
+        height: 100%;
+      }
+    }
+
+    .slick-slider {
+      margin-bottom: 0;
+
+      .slick-track {
+        align-items: start;
+        display: flex;
+      }
+
+      .slick-slide {
+        article {
+          padding-top: calc(2 * $space-lg);
+        }
+      }
+
+      .slick-dots {
+        bottom: auto;
+        display: flex;
+        gap: $space-sm;
+        margin: 0;
+        padding: $space-lg $space-lg 0 $space-lg;
+        top: 0;
+        text-align: left;
+
+        li {
+          margin: 0;
+          width: auto;
+
+          &.slick-active {
+            button {
+              width: 80px
+            }
+          }
+
+          button {
+            background: #fff;
+            border-radius: 20px;
+            height: 20px;
+            mix-blend-mode: overlay;
+            width: 20px;
+            @include transition(width .3s $cubic);
+
+            &:focus {
+              box-shadow: none;
+              mix-blend-mode: normal;
+            }
+
+            &::before {
+              display: none;
+            }
+          }
+        }
+      }
+    }
+  }
+}

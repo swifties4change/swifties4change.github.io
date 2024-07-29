@@ -1,0 +1,21 @@
+{{ attach_library('base/text-cards') }}
+{% set catch_cache = content|render %}
+{% set color = paragraph.field_background_color.value %}
+{% if color is not empty %}
+    {% set bg = color ~ ' has-bg'%}
+{% endif %}
+{% if paragraph.field_heading_size.value %}
+    {% set heading = paragraph.field_heading_size.value %}
+{% else%}
+    {% set heading = "h3" %}
+{% endif %}
+<div class="base__text-card {{bg}}">
+    <div class="inner">
+        {% if content.field_title.0 %}
+            <{{heading}} class="heading">{{content.field_title.0}}</{{heading}}>
+        {% endif %}
+       <div class="blurb">
+           {{content.field_rich_text}}
+       </div>
+   </div>
+</div>

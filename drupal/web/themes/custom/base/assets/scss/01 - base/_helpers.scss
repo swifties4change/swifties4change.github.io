@@ -1,0 +1,240 @@
+@import '../utilities.scss';
+
+*,
+::before,
+::after {
+  box-sizing: border-box;
+}
+
+.clearfix:before,
+.clearfix:after,
+.container:before,
+.container:after,
+.container-fluid:before,
+.container-fluid:after,
+.row:before,
+.row:after,
+.nav:before,
+.nav:after {
+  display: table;
+  content: " ";
+}
+
+.clearfix:after,
+.container:after,
+.container-fluid:after,
+.row:after,
+.nav:after {
+  clear: both;
+}
+
+.site-wrap {
+  img {
+    max-width: 100%;
+  }
+
+  .container {
+    margin: 0 auto;
+    padding: 0 $space-md;
+    position: relative;
+
+    @include breakpoint(md) {
+      width: 970px
+    }
+
+    @include breakpoint(lg) {
+      width: 1170px;
+    }
+
+    @include breakpoint(xl) {
+      width: 1400px;
+    }
+
+    .container {
+      padding: 0;
+      width: auto !important;
+    }
+  }
+
+  .embed-responsive {
+    position: relative;
+    display: block;
+    width: 100%;
+    padding: 0;
+    overflow: hidden;
+
+    &::before {
+      display: block;
+      content: "";
+    }
+
+    &.embed-responsive-16by9 {
+      &::before {
+        padding-top: 56.25%;
+      }
+    }
+
+    .embed-responsive-item,
+    embed,
+    iframe,
+    object,
+    video {
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      border: 0;
+    }
+  }
+
+  .embed-responsive .flush {
+    margin: 0 !important;
+  }
+
+  .unstyled {
+    list-style-type: none;
+    padding: 0;
+  }
+
+  .row {
+    &.no-gutter {
+      margin: 0;
+
+      > div {
+        padding: 0;
+      }
+    }
+  }
+
+
+  div[id*="local-tasks"] {
+    ul {
+      list-style-type: none;
+      margin-bottom: $space-md;
+      padding: 0;
+
+      li {
+        display: inline-block;
+        background: $gray-xl;
+        margin: 0;
+        @include transition(background .3s linear);
+
+        @include breakpoint(sm-max) {
+          display: none;
+        }
+
+        &:hover,
+        &:focus {
+          background: $gray;
+
+          a {
+            background: none;
+            color: #fff;
+          }
+        }
+
+        &.is-active {
+          @include breakpoint(sm-max) {
+            display: flex;
+          }
+
+          &::before {
+            border-bottom: 3px solid $primary;
+            z-index: 0;
+          }
+        }
+
+        a {
+          background: none;
+          color: $gray-dk;
+          text-decoration: none;
+        }
+      }
+    }
+  }
+
+  //Status Messages
+  form {
+    .message {
+      margin: 0 15px 20px;
+    }
+  }
+
+  .messages {
+
+    &.messages--error {
+      border-color: $red;
+
+      a {
+        color: $red;
+      }
+    }
+
+    &.messages--warning {
+      border-color: $gold;
+
+      a {
+        color: $gold;
+      }
+    }
+
+    &.messages--status {
+      border-color: $green;
+
+      a {
+        color: $green;
+      }
+    }
+
+    h2 {
+      font-size: $font-md;
+      margin: 0 0 0 2.5rem;
+    }
+
+    a {
+
+      &:hover,
+      &:focus {
+        text-decoration: underline #fff;
+        -webkit-text-decoration-line: underline;
+        -webkit-text-decoration-color: #fff;
+      }
+    }
+  }
+
+  .pager {
+    text-align: left;
+    margin: $space-lg 0;
+    clear: both;
+
+    ul {
+      padding: 0;
+      justify-content: start;
+
+      li {
+        a {
+          border-radius: 0;
+          padding: $space-sm $space-xs;
+          background: transparent;
+          border: none;
+          border-bottom: 2px solid transparent;
+          color: $gray;
+          text-decoration: none;
+          font-size: $font-xs;
+          @include transition(color .3s linear, border .3s linear);
+        }
+
+        &.is-active,
+        &:hover {
+          a {
+            background: transparent;
+            border-bottom: 2px solid $primary;
+            color: $primary;
+          }
+        }
+      }
+    }
+  }
+}

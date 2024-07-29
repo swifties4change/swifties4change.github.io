@@ -1,0 +1,2 @@
+.base__link-list ul li{padding-left:20px;position:relative;transition:padding .3s cubic-bezier(0,0,.2,1)}.base__link-list ul li:before{color:#639fab;content:"\e90e";font-family:icomoon;left:0;margin-right:5px;position:absolute}.base__link-list ul li:focus,.base__link-list ul li:hover{padding-left:30px}.sidebar .base__link-list h3{border-bottom:2px solid #596fc0;margin-bottom:20px;padding-bottom:5px}.sidebar .base__link-list ul li{border-bottom:2px solid #a0a0a0;font-size:16px;line-height:24px;padding-bottom:15px;margin-bottom:15px}
+/*# sourceMappingURL=link-list.css.map */

@@ -1,0 +1,2 @@
+!function(s,o,e){"use strict";s.behaviors.featuredLogos={attach:function(s,e){o(once("logo-slider",".featured-logos .logo-slider",s)).each((function(){let s=o(this);s.hasClass("slick-initialized")||s.slick({slidesToShow:4,slidesToScroll:1,responsive:[{breakpoint:1024,settings:{slidesToShow:2}},{breakpoint:768,settings:{slidesToShow:1}}]})}))}}}(Drupal,jQuery);
+//# sourceMappingURL=featured-logos.js.map

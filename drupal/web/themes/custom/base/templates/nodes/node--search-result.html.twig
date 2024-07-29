@@ -1,0 +1,11 @@
+<article{{attributes.addClass(content_type,"search-result")}}>
+	<div class="text">
+		{% if content.field_related_topics.0 %}
+			<div class="type">{{content.field_related_topics.0}}</div>
+		{% endif %}
+		<h3>
+			<a href="{{ url }}">{{ label }}</a>
+		</h3>
+		<p>{{ content.field_summary }}</p>
+	</div>
+</article>

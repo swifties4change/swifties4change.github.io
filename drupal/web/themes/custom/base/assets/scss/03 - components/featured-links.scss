@@ -1,0 +1,214 @@
+@import '../utilities.scss';
+
+.featured-links {
+  margin: $space-xl 0;
+
+  .inner {
+    align-items: center;
+    display: grid;
+    gap: $space-xxl;
+    grid: auto/1.5fr 1fr;
+    padding: 0;
+
+    @include breakpoint(sm-max) {
+      grid: auto / 1fr;
+      gap: $space-md;
+    }
+  }
+
+  .blurb {
+    p {
+      font-size: $font-xs;
+    }
+  }
+
+  .links {
+    @include breakpoint(sm-max) {
+      margin-top: $space-md;
+    }
+
+    ul {
+      margin: 0;
+
+      li {
+        margin-bottom: $space-md;
+
+        a {
+          display: block;
+          font-size: $font-sm;
+          padding-right: 30px;
+          position: relative;
+
+          &::after {
+            color: $primary-lt;
+            content: "\e90a";
+            font-family: icomoon;
+            position: absolute;
+            right: 0;
+            text-decoration: none;
+            top: 0;
+          }
+
+          &:hover,
+          &:focus {
+            color: $secondary;
+            text-decoration-color: $secondary-lt;
+
+            &::after {
+              color: $secondary;
+            }
+          }
+        }
+
+        + li {
+          border-top: 1px solid $gray-lt;
+          padding-top: $space-md;
+
+        }
+      }
+    }
+  }
+}
+
+.section {
+  &.has-bg {
+    .featured-links {
+      margin: 0;
+    }
+
+    &.primary {
+      li {
+        a {
+
+          &:hover,
+          &:focus {
+            color: $secondary;
+          }
+        }
+
+        + li {
+          border-top: 1px solid $primary-lt;
+
+        }
+      }
+    }
+
+    &.primary-lt {
+      li {
+        a {
+
+          &::after {
+            color: $secondary-lt;
+          }
+
+          &:hover,
+          &:focus {
+            color: #000;
+            text-decoration-color: $tertiary-lt;
+
+            &::after {
+              color: $tertiary-lt;
+            }
+          }
+        }
+
+        + li {
+          border-top: 1px solid $primary;
+
+        }
+      }
+    }
+
+    &.primary-dk {
+      li {
+        a {
+
+          &::after {
+            color: $tertiary-lt;
+          }
+
+          &:hover,
+          &:focus {
+            color: $tertiary;
+            text-decoration-color: $tertiary-lt;
+
+            &::after {
+              color: $tertiary;
+            }
+          }
+        }
+
+        + li {
+          border-top: 1px solid $primary;
+
+        }
+      }
+    }
+
+    &.secondary {
+      li {
+        a {
+
+          &::after {
+            color: $secondary-dk;
+          }
+
+          &:hover,
+          &:focus {
+            color: #000;
+            text-decoration-color: $secondary-dk;
+
+            &::after {
+              color: #000;
+            }
+          }
+        }
+
+        + li {
+          border-top: 1px solid $secondary-lt;
+        }
+      }
+    }
+
+    &.tertiary {
+      li {
+        a {
+
+          &::after {
+            color: $tertiary-dk;
+          }
+
+          &:hover,
+          &:focus {
+            color: #000;
+            text-decoration-color: $tertiary-dk;
+
+            &::after {
+              color: #000;
+            }
+          }
+        }
+
+        + li {
+          border-top: 1px solid $tertiary-lt;
+        }
+      }
+    }
+
+    &.gray {
+      li {
+        a {
+
+          &:hover,
+          &:focus {
+            color: $primary-dk;
+
+            &::after {
+              color: $primary-dk;
+            }
+          }
+        }
+      }
+    }
+  }
+}

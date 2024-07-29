@@ -1,0 +1,30 @@
+{% extends 'paragraph.html.twig' %}
+{% block content %}
+  {% set catch_cache = content|render %}
+  {% set color = paragraph.field_background_color.value %}
+  {% if color is not empty %}
+    {% set bg = color ~ ' has-bg' %}
+  {% endif %}
+  {% if paragraph.field_heading_size.value %}
+    {% set heading = paragraph.field_heading_size.value %}
+{% else%}    
+    {% set heading = "h2" %}
+{% endif %}
+  {% set layout = paragraph.field_layout.value %}
+  {% set gutter = paragraph.field_gutter_size.value %}
+  <div class="base__layout {{ bg }}">
+    <div class="container">
+      <div class="item-grid">
+        <div class="body-text">
+          {% if content.field_title[0] or content.field_rich_text[0] %}
+            {% if content.field_title[0] %}
+              <{{heading}} class="heading">{{content.field_title.0}}</{{heading}}> 
+            {% endif %}
+            {{ content.field_rich_text }}
+          {% endif %}
+        </div>
+        <div class="clearfix grid {{ gutter }} {{ layout }}">{{ content.field_items }}</div>
+      </div>
+    </div>
+  </div>
+{% endblock %}

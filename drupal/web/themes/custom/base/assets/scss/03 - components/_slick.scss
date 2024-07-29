@@ -1,0 +1,87 @@
+@import '../utilities.scss';
+
+.slick-slider {
+    .slick-arrow {
+        position: absolute;
+        height: 70px;
+        width: 40px;
+        z-index: 1;
+        @include transition(background .3s linear, color .3s linear);
+
+        @include breakpoint(md) {
+            width: 30px;
+        }
+
+        @include breakpoint(xs) {
+            width: 30px;
+        }
+
+        &::before {
+            font-family: 'icomoon' !important;
+            color: $secondary;
+            font-size: $font-md;
+            opacity: 1;
+
+            @include breakpoint(lg) {
+                font-size: $font-lg;
+            }
+        }
+
+        &.slick-prev {
+            left: 0;
+
+            &::before {
+                content: "\e90f";
+            }
+        }
+
+        &.slick-next {
+            right: 0;
+
+            &::before {
+                content: "\e90e";
+            }
+        }
+
+        &:hover {
+            color: $primary;
+
+            &::before {
+                opacity: 1;
+            }
+        }
+    }
+
+    .slick-slide {
+        position: relative;
+
+        img {
+            max-width: 100%;
+            height: auto;
+            margin: 0 auto;
+
+            @include breakpoint(xs) {
+                width: 100%;
+            }
+        }
+    }
+}
+
+.section {
+    &.primary {
+        .slick-slider {
+            .slick-arrow {
+                &::before {
+                    color: $secondary;
+                }
+
+                &:hover {
+
+                    &::before {
+                        color: #fff;
+                    }
+                }
+            }
+        }
+    }
+}

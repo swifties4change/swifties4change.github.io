@@ -1,0 +1,188 @@
+@import '../utilities.scss';
+
+.full-width-cta {
+  background-size: cover;
+  color: #000;
+  padding: $space-lg;
+  position: relative;
+
+  &.has-bg {
+    padding: calc(2 * $space-xl) $space-lg;
+  }
+
+  &.has-bgimg {
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    padding: calc(2 * $space-xl) $space-lg;
+
+    &.has-bg {
+      &::before {
+        content: "";
+        height: 100%;
+        left: 0;
+        opacity: .4;
+        position: absolute;
+        top: 0;
+        width: 100%;
+      }
+
+      &.primary {
+        &::before {
+          background: $primary;
+        }
+      }
+
+      &.secondary {
+        &::before {
+          background: $secondary;
+        }
+      }
+
+      &.tertiary {
+        &::before {
+          background: $tertiary;
+        }
+      }
+
+      &.gray {
+        &::before {
+          background: $gray-dk;
+        }
+      }
+
+      &.black {
+        &::before {
+          background: #000;
+        }
+      }
+
+      &.white {
+        &::before {
+          background: #fff;
+        }
+      }
+    }
+
+    .blurb {
+
+      &.left,
+      &.right {
+        .inner {
+          background: #fff;
+          color: #000;
+          padding: $space-lg;
+          text-align: left;
+
+          @include breakpoint(lg) {
+            width: 33%;
+          }
+
+          h2 {
+            text-align: left;
+          }
+        }
+      }
+
+      .inner {
+        color: #fff;
+        margin: 0 auto;
+        text-align: center;
+
+        h2 {
+          text-align: center;
+        }
+      }
+    }
+  }
+
+  &.primary {
+    background-color: $primary;
+    color: #fff;
+  }
+
+  &.primary-lt {
+    background-color: $primary-lt;
+  }
+
+  &.primary-dk {
+    background-color: $primary-dk;
+    color: #fff;
+  }
+
+  &.secondary {
+    background-color: $secondary;
+  }
+
+  &.tertiary {
+    background-color: $tertiary;
+  }
+
+  &.black {
+    background-color: #000;
+    color: #fff;
+  }
+
+  &.gray {
+    background-color: $gray-xl;
+
+    &::before {
+      background: rgba(#fff, .5) !important;
+    }
+  }
+
+  &.white {
+    background-color: #fff;
+
+    &::before {
+      background: rgba(#fff, .5) !important;
+    }
+  }
+
+  &.bordered {
+    background-color: #fff;
+    padding: $space-lg $space-md;
+
+    .blurb {
+      .inner {
+        border-bottom: 3px solid $primary-lt;
+        border-top: 3px solid $primary-lt;
+        padding: $space-xl 0;
+      }
+    }
+  }
+
+
+  .blurb {
+    width: 100%;
+    z-index: 2;
+
+    &.right {
+      .inner {
+        float: right;
+      }
+    }
+
+    &.left {
+      .inner {
+        float: left;
+      }
+    }
+
+    .inner {
+      margin: 0 auto;
+      text-align: center;
+
+      @include breakpoint(lg) {
+        width: 60%;
+      }
+
+      .subtitle {
+        font-size: $font-xxs;
+        font-weight: 700;
+        text-transform: uppercase;
+        margin-bottom: $space-sm;
+      }
+    }
+  }
+}

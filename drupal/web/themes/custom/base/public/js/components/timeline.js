@@ -1,0 +1,2 @@
+!function(e,i,s){"use strict";e.behaviors.timeline={attach:function(e,s){i(once("timeline",".timeline .items",e)).each((function(){let e=i(this);void 0!==e.slick&&e.slick({slidesToShow:3,slidesToScroll:1,variableWidth:!0,rows:0,prevArrow:e.next(".arrows").find(".prev-slide"),nextArrow:e.next(".arrows").find(".next-slide"),responsive:[{breakpoint:1200,settings:{slidesToShow:2}},{breakpoint:768,settings:{slidesToShow:1}}]})}))}}}(Drupal,jQuery);
+//# sourceMappingURL=timeline.js.map

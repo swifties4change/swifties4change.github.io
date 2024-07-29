@@ -1,0 +1,17 @@
+<article{{ attributes.addClass('news') }}>
+    {% if content.field_image.0 %}
+        <div class="image">
+            {{content.field_image}}
+            <span class="category">{{content.field_category}}</span>
+        </div>
+    {% else %}
+        <span class="category">{{content.field_category}}</span>
+    {% endif %}
+    <div class="text">
+        <h1>{{ label }}</h1>
+        {% if content.field_byline.0 %}
+            <div class="byline">{{ content.field_byline }}</div>
+        {% endif %}
+        {{ content.body}}
+    </div>
+</article>

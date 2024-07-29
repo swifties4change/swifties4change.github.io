@@ -1,0 +1,20 @@
+{{ attach_library('base/featured-logos') }}
+{% set catch_cache = content|render %}
+{% block content %}
+  <div class=" paragraph featured-logos">
+    {% if paragraph.field_use_slider.value == '1' %}
+    {% if paragraph.field_autoplay.value == '1' %}
+      {% set autoplay = '"autoplay":true, "autoplaySpeed":2000' %}
+    {% endif %}
+      <div class="logo-slider" data-slick='{ {{autoplay}} }' >
+        {% for key, img in content.field_media | filter(key|first != '#') %}
+          <div class="img">{{ img }}</div>
+        {% endfor %}
+      </div>
+    {% else %}
+      <div class="logo-grid">
+        {{content.field_media}}
+      </div>
+    {% endif %}
+  </div>
+{% endblock %}

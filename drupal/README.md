@@ -8,11 +8,11 @@ Clone this project locally
 ## Step 2 - Install dependencies
 Install dependencies by running the following command from your terminal.
 ```bash
-ddev composer install
+composer install
 ```
 
 ## Step 3 - Build the frontend
-cd into the `web/themes/custom/base` folder and run `npm i` to install node dependencies. This project uses the following versions:
+Run `npm i` to install node dependencies. This project uses the following versions:
 ```bash
 lstahl@lynn:~/$ npm -v
 8.15.0

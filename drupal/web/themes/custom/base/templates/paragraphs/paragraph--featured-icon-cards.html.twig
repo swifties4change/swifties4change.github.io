@@ -1,0 +1,22 @@
+{{ attach_library('base/featured-icon-cards') }}
+{% set catch_cache = content|render %}
+{% block content %}
+{% if paragraph.field_heading_size.value %}
+{% set heading = paragraph.field_heading_size.value %}
+{% else%}
+{% set heading = "h2" %}
+{% endif %}
+<div class="base__featured-icon-cards">
+  <div class="inner">
+    <div class="blurb">
+      {% if content.field_title.0 %}
+      <{{heading}}>{{content.field_title.0}}</{{heading}}>
+      {% endif %}
+      {{ content.field_rich_text }}
+    </div>
+    <div class="grid two no-gutter">
+      {{ content.field_items }}
+    </div>
+  </div>
+</div>
+{% endblock %}

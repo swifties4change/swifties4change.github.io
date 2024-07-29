@@ -1,0 +1,84 @@
+uuid: 07a86bca-6323-4280-9f25-2b36ed420c9e
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_bottom_sections
+    - node.type.page
+    - paragraphs.paragraphs_type.from_library
+    - paragraphs.paragraphs_type.section
+  module:
+    - entity_reference_revisions
+id: node.page.field_bottom_sections
+field_name: field_bottom_sections
+entity_type: node
+bundle: page
+label: 'Bottom Sections'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    target_bundles:
+      section: section
+      from_library: from_library
+    negate: 0
+    target_bundles_drag_drop:
+      accordion:
+        weight: -35
+        enabled: false
+      accordions:
+        weight: -34
+        enabled: false
+      fact:
+        weight: -33
+        enabled: false
+      facts:
+        weight: -32
+        enabled: false
+      featured_logos:
+        weight: -31
+        enabled: false
+      featured_media:
+        weight: -30
+        enabled: false
+      form:
+        weight: -29
+        enabled: false
+      from_library:
+        weight: -36
+        enabled: true
+      icon_card:
+        weight: -28
+        enabled: false
+      image_card:
+        weight: -27
+        enabled: false
+      layout:
+        weight: -26
+        enabled: false
+      link_list:
+        weight: -25
+        enabled: false
+      media_embed:
+        weight: -24
+        enabled: false
+      section:
+        weight: -37
+        enabled: true
+      testimonial:
+        weight: -23
+        enabled: false
+      testimonials:
+        weight: -22
+        enabled: false
+      text_card:
+        weight: -21
+        enabled: false
+      wysiwyg:
+        weight: -20
+        enabled: false
+field_type: entity_reference_revisions

@@ -1,0 +1,75 @@
+@import '../utilities.scss';
+
+.base__featured-icon-cards {
+  > .inner {
+    // align-items: center;
+    display: grid;
+    grid: auto / 100%;
+
+    @include breakpoint(lg) {
+      grid: auto / 50% 50%;
+    }
+
+    > .blurb {
+      align-self: center;
+      padding: $space-lg;
+
+      @include breakpoint(lg) {
+        padding: $space-xl;
+      }
+    }
+  }
+
+  .slick-slider {
+    margin-bottom: 0;
+    .slick-track {
+      align-items: start;
+      display: flex;
+    }
+
+    .slick-slide {
+      .inner {
+        padding-top: $space-xxl;
+      }
+    }
+
+    .slick-dots {
+      bottom: auto;
+      display: flex;
+      gap: $space-sm;
+      margin: 0;
+      padding: $space-md $space-md 0 $space-md;
+      top: 0;
+      text-align: left;
+
+      li {
+        margin: 0;
+        width: auto;
+
+        &.slick-active {
+          button {
+            width: 80px
+          }
+        }
+
+        button {
+          background: #fff;
+          border-radius: 20px;
+          height: 20px;
+          mix-blend-mode: overlay;
+          width: 20px;
+          @include transition(width .3s $cubic);
+
+          &:focus {
+            box-shadow: none;
+            mix-blend-mode: normal;
+          }
+
+          &::before {
+            display: none;
+          }
+        }
+      }
+    }
+  }
+}

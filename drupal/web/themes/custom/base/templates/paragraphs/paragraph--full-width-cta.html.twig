@@ -1,0 +1,28 @@
+{{ attach_library('base/full-width-cta') }}
+{% set catch_cache = content|render %}
+{% set position = content.field_position.0 %}
+{% set color = paragraph.field_background_color.value %}
+{% if color is not empty %}
+	{% set bg = color ~ ' has-bg ' %}
+{% endif %}
+{% if content.field_background_image.0 %}
+	{% set class = 'has-bgimg ' %}
+	{% set bgimg = file_url(paragraph.field_background_image.entity.field_media_image.entity.fileuri) %}
+{% endif %}
+<div class="full-width-cta {{ bg }} {{ class }} " style="background-image: url({{ bgimg }})">
+	<div class="blurb {{ position }} ">
+		<div class="container">
+			<div class="inner">
+				<div class="text">
+					{% if content.field_subtitle.0 %}
+						<div class="subtitle">{{ content.field_subtitle }}</div>
+					{% endif %}
+					{% if content.field_title.0 %}
+						<h2 class="heading">{{ content.field_title }}</h2>
+					{% endif %}
+					{{ content.field_rich_text }}
+          </div>
+			</div>
+		</div>
+	</div>
+</div>

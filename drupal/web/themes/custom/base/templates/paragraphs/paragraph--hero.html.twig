@@ -1,0 +1,32 @@
+{{ attach_library('base/hero') }}
+{% set catch_cache = content|render %}
+{% if content.field_image[0] %}
+{% set img = 'has-img' %}
+{% endif %}
+{% if content.field_background_video[0] %}
+{% set video = ' has-video' %}
+{% endif %}
+{% if content.field_rich_text[0] and content.field_title[0] is empty %}
+{% set text = ' has-text' %}
+{% endif %}
+<div class="base__hero {{ img }} {{ video }} {{ text }}">
+  <div class="img">{{ content.field_image }}
+    {% if content.field_background_video is not empty %}
+    <div class="video">
+      {{ content.field_background_video }}
+    </div>
+    {% endif %}
+  </div>
+  <div class="blurb">
+    <div class="container">
+      <div class="inner">
+        {% if content.field_title[0] %}
+        <h1>{{ content.field_title[0] }}</h1>
+        {% else %}
+        <h1>{{ title }}</h1>
+        {% endif %}
+        <div class="intro">{{ content.field_rich_text }}</div>
+      </div>
+    </div>
+  </div>
+</div>

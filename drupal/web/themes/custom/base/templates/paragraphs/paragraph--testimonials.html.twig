@@ -1,0 +1,28 @@
+{% set catch_cache = content|render %}{% set catch_cache = content|render %}
+{% if paragraph.field_heading_size.value %}
+	{% set heading = paragraph.field_heading_size.value %}
+{% else %}
+	{% set heading = "h2" %}
+{% endif %}
+{% extends 'paragraph.html.twig' %}
+{% block content %}
+	<div class="base__testimonials">
+		{% if content.field_title.0 %}
+			<{{heading}}>{{ content.field_title.0 }}</{{heading}}>
+		{% endif %}
+
+		{% if content.field_rich_text.0 %}
+			<div class="body-text">{{ content.field_rich_text }}</div>
+		{% endif %}
+
+		{% if paragraph.field_use_slider.value %}
+			<div class="slider">
+				{{content.field_items}}
+			</div>
+		{% else %}
+			<div class="testimonials-list">
+				{{content.field_items}}
+			</div>
+		{% endif %}
+	</div>
+{% endblock content %}

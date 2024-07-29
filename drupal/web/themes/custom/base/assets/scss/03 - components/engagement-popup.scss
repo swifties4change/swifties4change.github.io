@@ -1,0 +1,113 @@
+@import '../utilities.scss';
+
+.engagement-popup {
+    &.active {
+
+        .modal-backdrop,
+        .popup {
+            opacity: 1;
+            visibility: visible
+        }
+    }
+
+    .modal-backdrop {
+        background: rgba(0, 0, 0, 0.75);
+        left: 0;
+        height: 100%;
+        opacity: 0;
+        position: fixed;
+        top: 0;
+        visibility: hidden;
+        width: 100%;
+        z-index: 8;
+        transition: opacity 0.3s linear 0.3s
+    }
+
+    .popup {
+        left: 50%;
+        max-width: 600px;
+        opacity: 0;
+        padding-top: 60px;
+        position: fixed;
+        top: 50%;
+        visibility: hidden;
+        z-index: 9;
+        transform: translate(-50%, -50%);
+        transition: opacity 0.3s linear 0.3s;
+
+        @include breakpoint(lg) {
+            max-width: 800px;
+        }
+
+        > .close {
+            background: #000;
+            border: 2px solid #fff;
+            border-radius: 100%;
+            color: #fff;
+            height: 40px;
+            line-height: 40px;
+            opacity: 1;
+            position: absolute;
+            right: 0;
+            text-align: center;
+            text-shadow: none;
+            top: 5px;
+            width: 40px
+        }
+
+        .inner {
+            background: #fff;
+            padding: 40px;
+            text-align: center
+        }
+
+        form {
+            margin: 20px 0;
+
+            &.webform-submission-newsletter-form {
+                margin: 0 -15px;
+                position: relative;
+
+                .form-item {
+                    float: none;
+                }
+
+                input {
+                    border-radius: $border-radius-lg;
+                    padding: $space-md $space-lg $space-md $space-md;
+                }
+
+                .webform-actions {
+                    margin: 0;
+                    position: absolute;
+                    right: $space-md;
+                    top: 0;
+                }
+
+                button {
+                    background: none;
+                    border: none !important;
+                    box-shadow: none;
+                    color: $secondary;
+                    font-size: 0;
+                    height: 100%;
+                    line-height: 1;
+                    outline: none;
+                    padding: 0;
+
+                    &::before {
+                        content: "\e90e";
+                        display: block;
+                        font-family: icomoon;
+                        font-size: $font-md;
+                    }
+
+                    &:hover,
+                    &:focus {
+                        color: $gray-dk;
+                    }
+                }
+            }
+        }
+    }
+}
