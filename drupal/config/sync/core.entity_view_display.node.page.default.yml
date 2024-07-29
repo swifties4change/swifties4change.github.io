@@ -1,11 +1,14 @@
-uuid: 8580d3a9-7bdd-4346-9afc-9b65fc2a4554
+uuid: 837f8b1c-63a1-4199-95ce-7c90e09881b1
 langcode: en
 status: true
 dependencies:
   config:
     - field.field.node.page.field_bottom_sections
     - field.field.node.page.field_content_components
+    - field.field.node.page.field_hero
+    - field.field.node.page.field_media
     - field.field.node.page.field_sidebar_components
+    - field.field.node.page.field_summary
     - node.type.page
   module:
     - entity_reference_revisions
@@ -24,27 +27,54 @@ content:
       view_mode: default
       link: ''
     third_party_settings: {  }
-    weight: 103
+    weight: 107
     region: content
   field_content_components:
     type: entity_reference_revisions_entity_view
-    label: above
+    label: hidden
     settings:
       view_mode: default
       link: ''
     third_party_settings: {  }
     weight: 102
     region: content
-  field_sidebar_components:
+  field_hero:
     type: entity_reference_revisions_entity_view
-    label: above
+    label: hidden
     settings:
       view_mode: default
       link: ''
     third_party_settings: {  }
+    weight: 106
+    region: content
+  field_media:
+    type: entity_reference_entity_view
+    label: hidden
+    settings:
+      view_mode: default
+      link: false
+    third_party_settings: {  }
     weight: 104
     region: content
+  field_sidebar_components:
+    type: entity_reference_revisions_entity_view
+    label: hidden
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings: {  }
+    weight: 103
+    region: content
+  field_summary:
+    type: basic_string
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 105
+    region: content
   links:
+    settings: {  }
+    third_party_settings: {  }
     weight: 101
     region: content
 hidden: {  }

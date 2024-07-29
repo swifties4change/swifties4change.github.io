@@ -12,9 +12,14 @@
 
   .main {
     .content {
+      .paragraph--type--layout {
+        +.paragraph {
+          margin-top: $space-lg;
+        }
+      }
 
       .paragraph--type--wysiwyg {
-        + .paragraph--type--wysiwyg {
+        +.paragraph {
           margin-top: $space-lg;
         }
       }
@@ -63,13 +68,13 @@
       }
     }
 
-    + footer {
+    +footer {
       margin-top: $space-xl;
     }
   }
 
   .feature {
-    + footer {
+    +footer {
       margin-top: 0;
     }
   }

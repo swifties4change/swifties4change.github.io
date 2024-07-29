@@ -1,4 +1,4 @@
-uuid: 9f338b46-7076-45c6-97d5-4c3e107e3ea4
+uuid: f69efa91-8b12-477c-a170-c443892753e1
 langcode: en
 status: true
 dependencies:
@@ -16,69 +16,23 @@ settings:
       - bold
       - italic
       - strikethrough
-      - superscript
-      - subscript
       - removeFormat
-      - '|'
-      - link
       - '|'
       - bulletedList
       - numberedList
       - '|'
       - blockQuote
+      - link
+      - drupalMedia
       - drupalInsertImage
       - insertTable
       - horizontalLine
       - '|'
       - heading
-      - codeBlock
+      - style
       - '|'
       - sourceEditing
   plugins:
-    ckeditor5_codeBlock:
-      languages:
-        -
-          label: 'Plain text'
-          language: plaintext
-        -
-          label: C
-          language: c
-        -
-          label: 'C#'
-          language: cs
-        -
-          label: C++
-          language: cpp
-        -
-          label: CSS
-          language: css
-        -
-          label: Diff
-          language: diff
-        -
-          label: HTML
-          language: html
-        -
-          label: Java
-          language: java
-        -
-          label: JavaScript
-          language: javascript
-        -
-          label: PHP
-          language: php
-        -
-          label: Python
-          language: python
-        -
-          label: Ruby
-          language: ruby
-        -
-          label: TypeScript
-          language: typescript
-        -
-          label: XML
-          language: xml
     ckeditor5_heading:
       enabled_headings:
         - heading2
@@ -95,6 +49,112 @@ settings:
       multiBlock: true
     ckeditor5_sourceEditing:
       allowed_tags: {  }
+    ckeditor5_style:
+      styles:
+        -
+          label: 'Primary Button'
+          element: '<a class="btn primary">'
+        -
+          label: 'Secondary Button'
+          element: '<a class="btn secondary">'
+        -
+          label: 'Tertiary Button'
+          element: '<a class="btn tertiary">'
+        -
+          label: 'White Button'
+          element: '<a class="btn white">'
+        -
+          label: 'Black Button'
+          element: '<a class="btn black">'
+        -
+          label: 'Primary Outline Button'
+          element: '<a class="btn primary outline">'
+        -
+          label: 'Secondary Outline Button'
+          element: '<a class="btn secondary outline">'
+        -
+          label: 'Tertiary Outline Button'
+          element: '<a class="btn tertiary outline">'
+        -
+          label: 'White Outline Button'
+          element: '<a class="btn white outline">'
+        -
+          label: 'Primary Arrow Link'
+          element: '<a class="arrow-link primary">'
+        -
+          label: 'Secondary Arrow Link'
+          element: '<a class="arrow-link secondary">'
+        -
+          label: 'Tertiary Arrow Link'
+          element: '<a class="arrow-link tertiary">'
+        -
+          label: 'Primary Colored Text'
+          element: '<span class="primary">'
+        -
+          label: 'Secondary Colored Text'
+          element: '<span class="secondary">'
+        -
+          label: 'Tertiary Colored Text'
+          element: '<span class="tertiary">'
+        -
+          label: 'Highlighted Text'
+          element: '<span class="highlight">'
+        -
+          label: 'Unstyled List'
+          element: '<ul class="unstyled">'
+        -
+          label: 'List with Styled Bullets'
+          element: '<ul class="styled">'
+        -
+          label: 'Two Column List'
+          element: '<ul class="two-col">'
+        -
+          label: 'Styled Two Column List'
+          element: '<ul class="two-col styled">'
+        -
+          label: 'Unstyled Ordered List'
+          element: '<ol class="unstyled">'
+        -
+          label: 'Ordered List with Styled Bullets'
+          element: '<ol class="styled">'
+        -
+          label: 'Two Column Ordered  List'
+          element: '<ol class="two-col">'
+        -
+          label: 'Styled Two Column Ordered  List'
+          element: '<ol class="two-col styled">'
+        -
+          label: 'Lead Paragraph'
+          element: '<p class="lead">'
+        -
+          label: 'Table Wrap'
+          element: '<div class="table-wrap">'
+        -
+          label: Table
+          element: '<table class="table">'
+        -
+          label: 'Table - Secondary'
+          element: '<table class="table secondary">'
+        -
+          label: 'Table- Tertiary'
+          element: '<table class="table tertiary">'
+        -
+          label: 'Striped Table'
+          element: '<table class="table striped">'
+        -
+          label: 'Left Align Pull Quote'
+          element: '<blockquote class="pull-left">'
+        -
+          label: 'Right Align Pull Quote'
+          element: '<blockquote class="pull-right">'
+        -
+          label: 'Stylized Left Align Pull Quote'
+          element: '<blockquote class="styled pull-left">'
+        -
+          label: 'Stylized Right Align Pull Quote'
+          element: '<blockquote class="styled pull-right">'
+    media_media:
+      allow_view_mode_override: false
 image_upload:
   status: true
   scheme: public

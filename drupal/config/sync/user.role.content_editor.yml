@@ -1,4 +1,4 @@
-uuid: 7c3c6500-d326-4c02-8287-f0cd4711afba
+uuid: d3537793-b434-479d-ab6a-1cae538cd145
 langcode: en
 status: true
 dependencies:
@@ -7,7 +7,6 @@ dependencies:
     - node.type.page
     - taxonomy.vocabulary.tags
   module:
-    - comment
     - contextual
     - file
     - node
@@ -38,7 +37,6 @@ permissions:
   - 'delete own page content'
   - 'delete page revisions'
   - 'edit own article content'
-  - 'edit own comments'
   - 'edit own page content'
   - 'edit terms in tags'
   - 'revert all revisions'
